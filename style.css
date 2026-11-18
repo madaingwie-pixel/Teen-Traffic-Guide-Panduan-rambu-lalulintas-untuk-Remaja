@@ -1,89 +1,111 @@
-/* Import Font Pixel Ala Minecraft dari Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+/* Import Font Modern Kekinian (Plus Jakarta Sans) dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-    --mc-sky: #78a7ff;
-    --mc-grass: #5b8731;
-    --mc-grass-light: #76b041;
-    --mc-grass-dark: #3b5c1d;
-    --mc-dirt: #79553a;
-    --mc-dirt-dark: #4e3524;
-    --mc-stone: #8b8b8b;
-    --mc-stone-light: #c6c6c6;
-    --mc-stone-dark: #555555;
-    --mc-wood: #9c7f4e;
-    --mc-wood-dark: #6b532e;
-    --mc-gold: #fcdb05;
-    --mc-redstone: #d92626;
-    --mc-lapis: #2656d9;
+    /* Palet Warna Nusantara & Perkotaan Modern */
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --primary-navy: #0f172a;
+    --urban-teal: #0d9488;
+    --urban-teal-dark: #0f766e;
+    --batik-gold: #d97706;
+    --batik-sogan: #78350f;
+    --indo-red: #e11d48;
+    --indo-blue: #2563eb;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --border-soft: #e2e8f0;
+    --shadow-soft: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    --shadow-hover: 0 20px 30px -10px rgba(13, 148, 136, 0.15);
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* Membuat gambar & elemen tampak tajam seperti pixel */
-    image-rendering: pixelated;
 }
 
 body {
-    font-family: 'VT323', monospace;
-    font-size: 1.25rem;
-    background-color: var(--mc-dirt);
-    color: #ffffff;
-    line-height: 1.5;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
     min-height: 100vh;
-    /* Tekstur Blok Tanah (Dirt Block) Ala Minecraft */
+    /* Pola Background Geometri Batik Kawung Halus + Gradasi Tropis */
     background-image: 
-        linear-gradient(45deg, rgba(0,0,0,0.12) 25%, transparent 25%), 
-        linear-gradient(-45deg, rgba(0,0,0,0.12) 25%, transparent 25%), 
-        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.06) 75%), 
-        linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.15) 75%);
-    background-size: 32px 32px;
-    background-position: 0 0, 0 16px, 16px -16px, -16px 0;
+        radial-gradient(circle at 15% 10%, rgba(13, 148, 136, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(217, 119, 6, 0.06) 0%, transparent 40%),
+        radial-gradient(#cbd5e1 1.2px, transparent 1.2px),
+        radial-gradient(#cbd5e1 1.2px, var(--bg-main) 1.2px);
+    background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+    background-position: 0 0, 0 0, 0 0, 18px 18px;
 }
 
-/* Pita Merah Putih Versi Pixel */
+/* Aksen Pita Merah Putih Elegan di Paling Atas */
 .indo-ribbon {
     width: 100%;
-    height: 12px;
+    height: 6px;
     display: flex;
-    flex-direction: column;
-    border-bottom: 3px solid #000000;
+    flex-direction: row;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .ribbon-red {
-    height: 6px;
-    background-color: var(--mc-redstone);
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, #be123c, #e11d48);
 }
 
 .ribbon-white {
-    height: 6px;
+    width: 50%;
+    height: 100%;
     background-color: #ffffff;
 }
 
-/* Header Bergaya Langit & Blok Rumput Minecraft */
+/* Header Bergaya Modern Urban & Nuansa Kepulauan Indonesia */
 .hero {
     text-align: center;
-    padding: 3rem 1.5rem 3.5rem;
-    background: linear-gradient(180deg, #5c8eff 0%, #8eb5ff 100%);
-    border-bottom: 14px solid var(--mc-grass);
-    box-shadow: inset 0 -6px 0 var(--mc-grass-dark), 0 8px 0 var(--mc-dirt-dark);
+    padding: 4rem 1.5rem 4.5rem;
+    /* Gradasi Laut Kepulauan & Kota Malam Modern dengan Pola Garis Halus */
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(20, 184, 166, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(217, 119, 6, 0.2) 0%, transparent 50%),
+        linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #115e59 100%);
+    color: #ffffff;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
+    box-shadow: 0 15px 35px -10px rgba(15, 23, 42, 0.2);
     position: relative;
+    overflow: hidden;
 }
 
-/* Barisan Logo Garuda & Tut Wuri Handayani */
+/* Ornamen Lingkaran Pulau Halus di Background Hero */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+    pointer-events: none;
+}
+
+/* Barisan Logo Garuda & Tut Wuri Handayani (Glassmorphism Style) */
 .emblem-bar {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 1.2rem;
-    padding: 0.7rem 1.4rem;
-    margin-bottom: 1.5rem;
-    background-color: var(--mc-stone-light);
-    border: 4px solid #000000;
-    box-shadow: inset -4px -4px 0 var(--mc-stone-dark), inset 4px 4px 0 #ffffff;
-    border-radius: 0;
+    gap: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 1.8rem;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 1;
 }
 
 .emblem-item {
@@ -94,186 +116,215 @@ body {
 }
 
 .emblem-svg, .emblem-img {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
     object-fit: contain;
 }
 
 .emblem-item span {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.65rem;
-    color: #1e1e1e;
-    line-height: 1.4;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.25;
+    display: block;
 }
 
 .emblem-item small {
-    font-family: 'VT323', monospace;
-    font-size: 0.95rem;
-    font-weight: bold;
-    color: #3f3f3f;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #cbd5e1;
 }
 
 .emblem-divider {
-    width: 4px;
-    height: 34px;
-    background-color: var(--mc-stone-dark);
+    width: 1px;
+    height: 28px;
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 .hero-ornament {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.68rem;
-    color: var(--mc-gold);
-    text-shadow: 2px 2px 0 #000000;
-    margin-bottom: 1rem;
-    line-height: 1.5;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.15);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
     color: #ffffff;
-    text-shadow: 4px 4px 0 #2b2b2b, 6px 6px 0 #000000;
-    margin-bottom: 1.2rem;
-    line-height: 1.3;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
 }
 
 .hero p {
-    font-size: 1.35rem;
-    max-width: 680px;
+    font-size: 1.1rem;
+    max-width: 640px;
     margin: 0 auto;
-    color: #ffffff;
-    background: rgba(0, 0, 0, 0.45);
-    padding: 10px 18px;
-    border: 3px solid #000000;
-    text-shadow: 1px 1px 0 #000000;
+    color: #e2e8f0;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
 }
 
 /* Container Utama */
 .container {
-    max-width: 1120px;
-    margin: 2.5rem auto;
+    max-width: 1140px;
+    margin: 2.8rem auto;
     padding: 0 1.5rem;
 }
 
-/* Kontrol Pencarian & Tombol UI Minecraft */
+/* Kontrol Pencarian & Tombol Soft */
 .controls {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.3rem;
-    margin-bottom: 2.8rem;
+    gap: 1.4rem;
+    margin-bottom: 3rem;
 }
 
 .search-wrapper {
     position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: 520px;
 }
 
 .search-icon {
     position: absolute;
-    left: 16px;
+    left: 18px;
     top: 50%;
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    color: #a0a0a0;
+    color: var(--text-muted);
+    transition: color 0.2s;
 }
 
-/* Kotak Input ala Chat / Command Block Minecraft */
+/* Kotak Input Pencarian Modern */
 #search-input {
     width: 100%;
-    padding: 12px 18px 12px 46px;
-    background-color: #000000;
-    border: 3px solid var(--mc-stone-light);
-    border-radius: 0;
-    color: #ffffff;
-    font-family: 'VT323', monospace;
-    font-size: 1.3rem;
+    padding: 14px 20px 14px 48px;
+    background-color: #ffffff;
+    border: 1.5px solid var(--border-soft);
+    border-radius: 999px;
+    color: var(--text-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
     outline: none;
-    box-shadow: inset 3px 3px 0 #373737;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.25s ease;
 }
 
 #search-input::placeholder {
-    color: #888888;
+    color: #94a3b8;
 }
 
 #search-input:focus {
-    border-color: var(--mc-gold);
+    border-color: var(--urban-teal);
+    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.12);
 }
 
 .filter-buttons {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
-/* Tombol Klasik Minecraft */
+/* Tombol Filter Soft Pill */
 .btn-filter {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.68rem;
-    padding: 12px 16px;
-    background-color: var(--mc-stone);
-    color: #ffffff;
-    text-shadow: 2px 2px 0 #3f3f3f;
-    border: 3px solid #000000;
-    border-radius: 0;
-    box-shadow: inset -3px -3px 0 var(--mc-stone-dark), inset 3px 3px 0 var(--mc-stone-light);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: var(--text-muted);
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
     cursor: pointer;
-    transition: transform 0.1s;
+    transition: all 0.2s ease;
 }
 
 .btn-filter:hover {
-    background-color: #6c87d9;
-    box-shadow: inset -3px -3px 0 #3b4d85, inset 3px 3px 0 #9db2f2;
+    background-color: #f1f5f9;
+    color: var(--text-dark);
+    transform: translateY(-1px);
 }
 
 .btn-filter.active {
-    background-color: var(--mc-grass);
-    color: var(--mc-gold);
-    text-shadow: 2px 2px 0 #000000;
-    box-shadow: inset -3px -3px 0 var(--mc-grass-dark), inset 3px 3px 0 var(--mc-grass-light);
+    background-color: var(--urban-teal);
+    color: #ffffff;
+    border-color: var(--urban-teal);
+    box-shadow: 0 6px 16px rgba(13, 148, 136, 0.28);
 }
 
-/* Grid Kartu Rambu Bergaya Inventory / Item Frame */
+/* Grid Kartu Rambu Bergaya Katalog Outlet Modern */
 .signs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
     gap: 24px;
 }
 
 .sign-card {
-    background-color: var(--mc-stone-light);
-    color: #1e1e1e;
-    border: 4px solid #000000;
-    border-radius: 0;
-    padding: 1.8rem 1.4rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: 22px;
+    padding: 2rem 1.5rem;
     text-align: center;
-    box-shadow: 
-        inset -5px -5px 0 var(--mc-stone-dark), 
-        inset 5px 5px 0 #ffffff,
-        6px 6px 0 rgba(0, 0, 0, 0.45);
-    transition: transform 0.15s ease;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Aksen Garis Batik/Emas Tipis di Atas Kartu Saat Hover */
+.sign-card::top {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--urban-teal), var(--batik-gold));
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
 .sign-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    border-color: rgba(13, 148, 136, 0.35);
+    box-shadow: var(--shadow-hover);
 }
 
-/* Slot Inventory Minecraft untuk Wadah Rambu */
+/* Wadah Rambu Lembut */
 .sign-visual {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 1.2rem;
-    padding: 12px;
-    background-color: #8b8b8b;
-    border: 3px solid #373737;
-    border-radius: 0;
-    box-shadow: inset 4px 4px 0 #373737, inset -4px -4px 0 #ffffff;
+    width: 104px;
+    height: 104px;
+    margin: 0 auto 1.3rem;
+    padding: 16px;
+    background: linear-gradient(145deg, #f8fafc, #f1f5f9);
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.sign-card:hover .sign-visual {
+    transform: scale(1.05);
 }
 
 .indo-sign {
@@ -281,92 +332,103 @@ body {
     height: 100%;
 }
 
+/* Badge Kategori Soft */
 .badge {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     display: inline-block;
-    padding: 6px 10px;
-    border-radius: 0;
-    font-size: 0.58rem;
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
-    margin-bottom: 0.9rem;
-    border: 2px solid #000000;
-    color: #ffffff;
-    text-shadow: 1px 1px 0 #000000;
+    margin-bottom: 0.85rem;
 }
 
-.bg-larangan { background-color: var(--mc-redstone); }
-.bg-peringatan { background-color: #e69d00; color: #000000; text-shadow: none; }
-.bg-perintah { background-color: var(--mc-lapis); }
+.bg-larangan { 
+    background-color: #ffe4e6; 
+    color: #be123c; 
+}
+.bg-peringatan { 
+    background-color: #fef3c7; 
+    color: #b45309; 
+}
+.bg-perintah { 
+    background-color: #dbeafe; 
+    color: #1d4ed8; 
+}
 
 .sign-card h3 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: #111111;
-    margin-bottom: 0.7rem;
-}
-
-.sign-card p {
-    color: #2b2b2b;
-    font-size: 1.25rem;
+    font-size: 1.12rem;
+    font-weight: 700;
     line-height: 1.35;
-}
-
-/* Bagian Kuis Bergaya Crafting Table / GUI Minecraft */
-.quiz-section {
-    margin-top: 4rem;
-    background-color: var(--mc-wood);
-    border: 4px solid #000000;
-    border-radius: 0;
-    padding: 2.5rem 1.8rem;
-    text-align: center;
-    box-shadow: 
-        inset -6px -6px 0 var(--mc-wood-dark), 
-        inset 6px 6px 0 #c4a46c,
-        8px 8px 0 rgba(0, 0, 0, 0.5);
-}
-
-.quiz-tag {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.65rem;
-    color: var(--mc-gold);
-    text-shadow: 2px 2px 0 #000000;
-    display: block;
-    margin-bottom: 0.8rem;
-}
-
-.quiz-header h2 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1.25rem;
-    line-height: 1.4;
-    color: #ffffff;
-    text-shadow: 3px 3px 0 #000000;
+    color: var(--primary-navy);
     margin-bottom: 0.6rem;
 }
 
+.sign-card p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+/* Bagian Kuis dengan Sentuhan Batik Sogan & Urban Modern */
+.quiz-section {
+    margin-top: 4.5rem;
+    background: 
+        radial-gradient(circle at top right, rgba(217, 119, 6, 0.14), transparent 45%),
+        radial-gradient(circle at bottom left, rgba(13, 148, 136, 0.14), transparent 45%),
+        linear-gradient(145deg, #0f172a, #1e293b);
+    border-radius: 28px;
+    padding: 3rem 1.8rem;
+    text-align: center;
+    box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.25);
+    position: relative;
+}
+
+.quiz-tag {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.14);
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 0.9rem;
+}
+
+.quiz-header h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
 #quiz-progress {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #fff3b0;
-    text-shadow: 1px 1px 0 #000000;
-    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #94a3b8;
+    margin-bottom: 1.8rem;
 }
 
 .quiz-card {
-    max-width: 600px;
+    max-width: 620px;
     margin: 0 auto;
-    background-color: var(--mc-stone-light);
-    border: 4px solid #000000;
-    padding: 1.8rem;
-    box-shadow: inset -4px -4px 0 var(--mc-stone-dark), inset 4px 4px 0 #ffffff;
+    background-color: #ffffff;
+    border-radius: 22px;
+    padding: 2rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 #quiz-question {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-bottom: 1.4rem;
-    color: #111111;
-    line-height: 1.35;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--primary-navy);
+    line-height: 1.45;
 }
 
 .quiz-options {
@@ -375,89 +437,102 @@ body {
     gap: 12px;
 }
 
+/* Tombol Pilihan Kuis Soft */
 .quiz-btn {
-    padding: 12px 16px;
-    background-color: var(--mc-stone);
-    border: 3px solid #000000;
-    border-radius: 0;
-    color: #ffffff;
-    text-shadow: 2px 2px 0 #2b2b2b;
-    font-family: 'VT323', monospace;
-    font-size: 1.35rem;
+    padding: 14px 18px;
+    background-color: #f8fafc;
+    border: 1.5px solid var(--border-soft);
+    border-radius: 14px;
+    color: var(--text-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
     cursor: pointer;
     text-align: left;
-    box-shadow: inset -3px -3px 0 var(--mc-stone-dark), inset 3px 3px 0 var(--mc-stone-light);
+    transition: all 0.2s ease;
 }
 
 .quiz-btn:hover:not(:disabled) {
-    background-color: #6c87d9;
-    box-shadow: inset -3px -3px 0 #3b4d85, inset 3px 3px 0 #9db2f2;
+    background-color: #f0fdfa;
+    border-color: var(--urban-teal);
+    color: var(--urban-teal-dark);
+    transform: translateX(4px);
 }
 
 .quiz-btn:disabled {
     cursor: not-allowed;
-    color: #111111;
-    text-shadow: none;
+    opacity: 0.85;
 }
 
 #quiz-feedback {
-    margin-top: 1.2rem;
-    font-weight: bold;
-    font-size: 1.35rem;
-    background: #1e1e1e;
-    padding: 8px 12px;
-    border: 2px solid #000000;
+    margin-top: 1.3rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    background: #f1f5f9;
+    color: var(--primary-navy);
+    padding: 12px 16px;
+    border-radius: 12px;
 }
 
 #next-btn {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.7rem;
-    margin-top: 1.2rem;
-    padding: 14px 22px;
-    background-color: var(--mc-grass);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    margin-top: 1.3rem;
+    padding: 12px 26px;
+    background-color: var(--urban-teal);
     color: #ffffff;
-    text-shadow: 2px 2px 0 #000000;
-    border: 3px solid #000000;
-    border-radius: 0;
-    box-shadow: inset -3px -3px 0 var(--mc-grass-dark), inset 3px 3px 0 var(--mc-grass-light);
+    border: none;
+    border-radius: 999px;
+    box-shadow: 0 6px 16px rgba(13, 148, 136, 0.25);
     cursor: pointer;
     display: none;
+    transition: all 0.2s ease;
 }
 
 #next-btn:hover {
-    background-color: var(--mc-grass-light);
+    background-color: var(--urban-teal-dark);
+    transform: translateY(-2px);
 }
 
-/* Footer ala Bedrock Minecraft */
+/* Footer Bersih & Modern */
 footer {
     text-align: center;
     padding: 2.5rem 1.5rem;
-    margin-top: 4rem;
-    color: #d4d4d4;
-    font-size: 1.25rem;
-    background-color: #1a1a1a;
-    border-top: 6px solid #000000;
-    background-image: 
-        linear-gradient(45deg, #2b2b2b 25%, transparent 25%), 
-        linear-gradient(-45deg, #2b2b2b 25%, transparent 25%);
-    background-size: 24px 24px;
+    margin-top: 4.5rem;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    background-color: #ffffff;
+    border-top: 1px solid var(--border-soft);
 }
 
 .footer-ornament {
-    color: var(--mc-gold);
+    color: var(--batik-gold);
     letter-spacing: 6px;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
 }
 
 footer strong {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.75rem;
-    color: var(--mc-grass-light);
+    font-weight: 700;
+    color: var(--primary-navy);
 }
 
 /* Responsif Layar HP */
 @media (max-width: 600px) {
-    .hero h1 { font-size: 1.35rem; }
-    .emblem-bar { flex-direction: column; gap: 0.8rem; }
-    .emblem-divider { width: 80%; height: 3px; }
-}
+    .hero {
+        padding: 3rem 1.2rem 3.5rem;
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+    }
+    .hero h1 { font-size: 1.75rem; }
+    .emblem-bar { 
+        flex-direction: column; 
+        gap: 0.8rem; 
+        border-radius: 20px;
+        padding: 1rem 1.4rem;
+    }
+    .emblem-divider { width: 80%; height: 1px; }
+    .quiz-section { padding: 2.2rem 1.2rem; }
+    .quiz-card { padding: 1.4rem; }
+}v
