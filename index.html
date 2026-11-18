@@ -4,17 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teen Traffic Guide - Panduan Rambu Lalu Lintas Indonesia</title>
+    <!-- Font Klasik Eropa & Modern Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Pita Merah Putih Khas Indonesia di Bagian Paling Atas -->
+    <div class="indo-ribbon">
+        <div class="ribbon-red"></div>
+        <div class="ribbon-white"></div>
+    </div>
+
     <header class="hero">
-        <div class="hero-badge">EDUKASI KESELAMATAN BERKENDARA INDONESIA</div>
+        <!-- Barisan Lencana Resmi: Garuda Merah Putih & Tut Wuri Handayani -->
+        <div class="emblem-bar">
+            <!-- Lencana Perisai Garuda Merah Putih -->
+            <div class="emblem-item" title="Republik Indonesia - Merah Putih">
+                <svg viewBox="0 0 100 110" class="emblem-svg">
+                    <!-- Bingkai Emas Klasik -->
+                    <path d="M50 4 L92 20 L92 58 C92 84 50 104 50 104 C50 104 8 84 8 58 L8 20 Z" fill="#1e293b" stroke="#d4af37" stroke-width="5"/>
+                    <!-- Sayap Emas Stilasi -->
+                    <path d="M16 32 Q32 24 44 38 M84 32 Q68 24 56 38 M14 44 Q30 38 42 48 M86 44 Q70 38 58 48" stroke="#d4af37" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                    <!-- Perisai Merah Putih -->
+                    <path d="M50 26 L72 34 L72 56 C72 72 50 84 50 84 C50 84 28 72 28 56 L28 34 Z" fill="#ffffff" stroke="#d4af37" stroke-width="3"/>
+                    <path d="M29.5 35 L70.5 35 L70.5 55 L29.5 55 Z" fill="#dc2626"/>
+                    <!-- Bintang Emas di Tengah Perisai -->
+                    <polygon points="50,46 53,53 60,53 54,58 56,65 50,60 44,65 46,58 40,53 47,53" fill="#d4af37"/>
+                </svg>
+                <span>INDONESIA<br><small>MERAH PUTIH</small></span>
+            </div>
+
+            <div class="emblem-divider"></div>
+
+            <!-- Lencana Tut Wuri Handayani (Segi Lima Biru-Emas) -->
+            <div class="emblem-item" title="Tut Wuri Handayani - Pendidikan Indonesia">
+                <svg viewBox="0 0 100 105" class="emblem-svg">
+                    <!-- Segi Lima Biru Tua Kemendikbud -->
+                    <polygon points="50,5 95,38 78,94 22,94 5,38" fill="#1d4ed8" stroke="#d4af37" stroke-width="4.5"/>
+                    <polygon points="50,12 88,41 73,88 27,88 12,41" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
+                    <!-- Stilasi Obor & Sayap Pelita -->
+                    <path d="M50 22 C45 30 47 36 50 40 C53 36 55 30 50 22 Z" fill="#facc15"/>
+                    <rect x="47" y="42" width="6" height="24" rx="2" fill="#ffffff"/>
+                    <!-- Lengkungan Sayap & Buku Terbuka -->
+                    <path d="M26 52 Q38 44 47 56 M74 52 Q62 44 53 56" stroke="#ffffff" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                    <path d="M28 68 Q50 78 72 68" stroke="#d4af37" stroke-width="4" fill="none" stroke-linecap="round"/>
+                </svg>
+                <span>TUT WURI<br><small>HANDAYANI</small></span>
+            </div>
+        </div>
+
+        <div class="hero-ornament">✦ PANDUAN RESMI EDUKASI GENERASI MUDA ✦</div>
         <h1>Teen Traffic Guide</h1>
-        <p>Pahami makna rambu lalu lintas resmi Indonesia. Jadilah pengendara muda yang cerdas, berkelas, dan utamakan keselamatan di jalan raya.</p>
+        <p>Mengenal dan memahami makna rambu lalu lintas resmi Republik Indonesia. Jadilah pengendara muda yang berwibawa, taat hukum, dan mengutamakan keselamatan di jalan raya.</p>
     </header>
 
     <main class="container">
@@ -36,11 +80,12 @@
             </div>
         </section>
 
-        <!-- Grid Kartu Rambu Resmi Indonesia (SVG) -->
+        <!-- Grid Kartu Rambu Resmi Indonesia -->
         <section class="signs-grid" id="signs-container">
             
             <!-- 1. Dilarang Berhenti -->
             <article class="sign-card larangan">
+                <div class="card-corner-ornament"></div>
                 <div class="sign-visual">
                     <svg viewBox="0 0 100 100" class="indo-sign">
                         <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
@@ -53,8 +98,9 @@
                 <p>Kendaraan dilarang berhenti sejenak maupun parkir di sepanjang area rambu karena berisiko memicu kemacetan dan tabrakan beruntun.</p>
             </article>
 
-            <!-- 2. Dilarang Masuk (Verboden) -->
+            <!-- 2. Dilarang Masuk -->
             <article class="sign-card larangan">
+                <div class="card-corner-ornament"></div>
                 <div class="sign-visual">
                     <svg viewBox="0 0 100 100" class="indo-sign">
                         <circle cx="50" cy="50" r="45" fill="#dc2626"/>
@@ -68,6 +114,7 @@
 
             <!-- 3. Dilarang Putar Balik -->
             <article class="sign-card larangan">
+                <div class="card-corner-ornament"></div>
                 <div class="sign-visual">
                     <svg viewBox="0 0 100 100" class="indo-sign">
                         <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
@@ -81,8 +128,9 @@
                 <p>Pengendara dilarang memutar balik arah kendaraan di titik ini karena mengganggu arus lalu lintas berkecepatan tinggi.</p>
             </article>
 
-            <!-- 4. Peringatan Tikungan Tajam ke Kanan -->
+            <!-- 4. Peringatan Tikungan Tajam -->
             <article class="sign-card peringatan">
+                <div class="card-corner-ornament"></div>
                 <div class="sign-visual">
                     <svg viewBox="0 0 100 100" class="indo-sign">
                         <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
@@ -95,8 +143,9 @@
                 <p>Kurangi kecepatan sebelum memasuki tikungan dan dilarang keras mendahului kendaraan lain di area pandang terbatas ini.</p>
             </article>
 
-            <!-- 5. Peringatan Banyak Anak Sekolah / Penyeberang -->
+            <!-- 5. Area Penyeberangan -->
             <article class="sign-card peringatan">
+                <div class="card-corner-ornament"></div>
                 <div class="sign-visual">
                     <svg viewBox="0 0 100 100" class="indo-sign">
                         <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
@@ -110,8 +159,9 @@
                 <p>Banyak pelajar atau pejalan kaki menyeberang. Wajib memperlambat laju kendaraan dan dahulukan pejalan kaki.</p>
             </article>
 
-            <!-- 6. Perintah Batas Kecepatan Maksimum -->
+            <!-- 6. Batas Kecepatan Minimum -->
             <article class="sign-card perintah">
+                <div class="card-corner-ornament"></div>
                 <div class="sign-visual">
                     <svg viewBox="0 0 100 100" class="indo-sign">
                         <circle cx="50" cy="50" r="45" fill="#2563eb" stroke="#ffffff" stroke-width="3"/>
@@ -123,8 +173,9 @@
                 <p>Rambu biru dengan angka mewajibkan pengendara memacu kendaraan minimal pada kecepatan yang tertera demi kelancaran arus.</p>
             </article>
 
-            <!-- 7. Perintah Wajib Mengikuti Arah ke Kiri -->
+            <!-- 7. Wajib Ikuti Arah Kiri -->
             <article class="sign-card perintah">
+                <div class="card-corner-ornament"></div>
                 <div class="sign-visual">
                     <svg viewBox="0 0 100 100" class="indo-sign">
                         <circle cx="50" cy="50" r="45" fill="#2563eb" stroke="#ffffff" stroke-width="3"/>
@@ -137,8 +188,9 @@
                 <p>Pengendara wajib mengarahkan kendaraan ke kiri sesuai tanda panah untuk mencegah tabrakan di persimpangan satu arah.</p>
             </article>
 
-            <!-- 8. Larangan Batas Kecepatan Maksimum -->
+            <!-- 8. Kecepatan Maksimal 60 km/jam -->
             <article class="sign-card larangan">
+                <div class="card-corner-ornament"></div>
                 <div class="sign-visual">
                     <svg viewBox="0 0 100 100" class="indo-sign">
                         <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
@@ -152,10 +204,10 @@
 
         </section>
 
-        <!-- Mini Kuis Interaktif -->
+        <!-- Simulasi Ujian Teori -->
         <section class="quiz-section">
             <div class="quiz-header">
-                <span class="quiz-tag">SIMULASI UJIAN TEORI SIM</span>
+                <span class="quiz-tag">✦ EVALUASI & SIMULASI UJIAN TEORI ✦</span>
                 <h2>Uji Pemahaman Rambu Lalu Lintas</h2>
                 <p id="quiz-progress"></p>
             </div>
@@ -170,7 +222,8 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 <strong>Teen Traffic Guide</strong>. Edukasi Keselamatan Lalu Lintas Generasi Muda Indonesia.</p>
+        <div class="footer-ornament">✦ ❖ ✦</div>
+        <p>&copy; 2026 <strong>Teen Traffic Guide</strong> &mdash; Generasi Muda Pelopor Keselamatan Berlalu Lintas Indonesia.</p>
     </footer>
 
     <script src="script.js"></script>
