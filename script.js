@@ -1,14 +1,10 @@
-// --- 1. FITUR FILTER & PENCARIAN RAMBU ---
 let currentCategory = 'all';
 
 function filterSigns(category, btnElement) {
     currentCategory = category;
-
-    // Update tampilan tombol aktif
     const buttons = document.querySelectorAll('.btn-filter');
     buttons.forEach(btn => btn.classList.remove('active'));
     btnElement.classList.add('active');
-
     applyFilters();
 }
 
@@ -34,37 +30,26 @@ function applyFilters() {
     });
 }
 
-// --- 2. SISTEM KUIS INTERAKTIF MULTI-SOAL ---
 const quizData = [
     {
         question: "Kamu melihat rambu berbentuk belah ketupat berwarna kuning dengan gambar jalan berkelok. Apa yang harus kamu lakukan?",
         options: [
-            "Menambah kecepatan agar cepat melewati tikungan",
-            "Mengurangi kecepatan dan bersiap menghadapi tikungan tajam",
-            "Langsung berhenti mendadak di tengah jalan"
+            "Menambah kecepatan agar cepat lewat",
+            "Mengurangi kecepatan dan bersiap menghadapi tikungan",
+            "Berhenti di pinggir jalan"
         ],
         correct: 1,
-        explanation: "Rambu kuning adalah rambu peringatan. Kamu wajib waspada dan menurunkan kecepatan."
+        explanation: "Rambu kuning adalah peringatan untuk lebih waspada dan mengurangi kecepatan."
     },
     {
-        question: "Apa arti dari rambu lingkaran bertepi merah dengan huruf 'S' yang dicoret garis merah?",
+        question: "Apa arti dari rambu lingkaran bertepi merah dengan huruf 'S' yang dicoret?",
         options: [
-            "Dilarang Stop (Berhenti) di area tersebut",
-            "Dilarang Salip kendaraan di depan",
-            "Area khusus parkir sepeda motor"
+            "Dilarang Berhenti / Parkir",
+            "Dilarang Menyalip",
+            "Area Sekolah"
         ],
         correct: 0,
-        explanation: "Huruf 'S' dicoret berarti Dilarang Stop (berhenti sejenak maupun parkir)."
-    },
-    {
-        question: "Rambu berbentuk lingkaran berwarna dasar biru dengan tanda panah putih termasuk jenis rambu apa?",
-        options: [
-            "Rambu Larangan",
-            "Rambu Peringatan Bahaya",
-            "Rambu Perintah yang wajib diikuti"
-        ],
-        correct: 2,
-        explanation: "Warna dasar biru pada rambu lalu lintas menandakan perintah yang wajib dipatuhi pengendara."
+        explanation: "Huruf S dicoret melambangkan larangan berhenti atau parkir di area tersebut."
     }
 ];
 
@@ -78,7 +63,6 @@ function loadQuiz() {
     const nextBtn = document.getElementById('next-btn');
     const progressEl = document.getElementById('quiz-progress');
 
-    // Reset tampilan
     feedbackEl.textContent = '';
     nextBtn.style.display = 'none';
     optionsEl.innerHTML = '';
@@ -96,14 +80,10 @@ function loadQuiz() {
             optionsEl.appendChild(button);
         });
     } else {
-        // Tampilkan hasil akhir kuis
         progressEl.textContent = 'Kuis Selesai!';
         questionEl.textContent = `Skor Akhir Kamu: ${score} dari ${quizData.length} benar!`;
         feedbackEl.style.color = '#2563eb';
-        feedbackEl.textContent = score === quizData.length 
-            ? '🎉 Luar biasa! Kamu siap menjadi pengendara muda yang patuh aturan!' 
-            : '👍 Bagus! Terus pelajari rambu di atas agar makin paham keselamatan jalan.';
-        
+        feedbackEl.textContent = '🎉 Hebat! Kamu sudah makin paham aturan lalu lintas.';
         nextBtn.textContent = 'Ulangi Kuis';
         nextBtn.style.display = 'inline-block';
         nextBtn.onclick = restartQuiz;
@@ -116,18 +96,17 @@ function selectAnswer(selectedIndex, selectedBtn) {
     const nextBtn = document.getElementById('next-btn');
     const allButtons = document.querySelectorAll('.quiz-btn');
 
-    // Nonaktifkan semua tombol setelah memilih
     allButtons.forEach(btn => btn.disabled = true);
 
     if (selectedIndex === currentQuiz.correct) {
         score++;
-        selectedBtn.style.borderColor = '#16a34a';
         selectedBtn.style.backgroundColor = '#dcfce7';
+        selectedBtn.style.borderColor = '#16a34a';
         feedbackEl.style.color = '#16a34a';
         feedbackEl.textContent = `✅ Tepat! ${currentQuiz.explanation}`;
     } else {
-        selectedBtn.style.borderColor = '#ef4444';
         selectedBtn.style.backgroundColor = '#fee2e2';
+        selectedBtn.style.borderColor = '#ef4444';
         allButtons[currentQuiz.correct].style.borderColor = '#16a34a';
         feedbackEl.style.color = '#dc2626';
         feedbackEl.textContent = `❌ Kurang tepat. ${currentQuiz.explanation}`;
@@ -147,5 +126,4 @@ function restartQuiz() {
     loadQuiz();
 }
 
-// Jalankan kuis saat halaman selesai dimuat
 document.addEventListener('DOMContentLoaded', loadQuiz);
