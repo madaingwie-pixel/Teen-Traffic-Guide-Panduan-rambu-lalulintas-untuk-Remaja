@@ -89,6 +89,13 @@ body {
     filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
 }
 
+.emblem-img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
+}
+
 .emblem-item span {
     font-family: 'Cinzel', serif;
     font-size: 0.78rem;
@@ -434,47 +441,4 @@ body {
     margin-top: 1.4rem;
     padding: 12px 30px;
     background: linear-gradient(135deg, var(--gold-light), var(--gold-primary), var(--gold-dark));
-    color: #070b14;
-    border: none;
-    border-radius: 4px;
-    font-size: 0.92rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    cursor: pointer;
-    display: none;
-    transition: transform 0.2s;
-}
-
-#next-btn:hover {
-    transform: scale(1.03);
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 3rem 1.5rem;
-    margin-top: 4.5rem;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    border-top: 1px solid var(--border-gold);
-    background: rgba(7, 11, 20, 0.9);
-}
-
-.footer-ornament {
-    color: var(--gold-primary);
-    letter-spacing: 8px;
-    margin-bottom: 0.8rem;
-    font-size: 0.9rem;
-}
-
-footer strong {
-    font-family: 'Cinzel', serif;
-    color: var(--gold-light);
-}
-
-/* Responsif Layar HP */
-@media (max-width: 600px) {
-    .hero h1 { font-size: 2.2rem; }
-    .emblem-bar { flex-direction: column; border-radius: 20px; gap: 0.8rem; }
-    .emblem-divider { width: 80%; height: 1px; }
-}
+    color: #070b14
