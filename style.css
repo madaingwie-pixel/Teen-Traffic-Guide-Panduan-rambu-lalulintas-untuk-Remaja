@@ -1,282 +1,377 @@
 :root {
-    --bg-main: #090d16;
-    --bg-card: #111827;
-    --bg-card-hover: #172033;
+    --bg-royal: #070b14;
+    --bg-velvet: #0d1424;
+    --bg-card: #11192c;
     --gold-primary: #d4af37;
-    --gold-light: #f3e5ab;
-    --gold-glow: rgba(212, 175, 55, 0.22);
+    --gold-light: #f6e29c;
+    --gold-dark: #997a15;
+    --gold-glow: rgba(212, 175, 55, 0.25);
+    --indo-red: #dc2626;
+    --indo-white: #ffffff;
     --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --danger: #ef4444;
-    --warning: #eab308;
-    --info: #3b82f6;
-    --success: #22c55e;
+    --text-muted: #cbd5e1;
+    --border-gold: rgba(212, 175, 55, 0.35);
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
-    background-color: var(--bg-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-royal);
     color: var(--text-main);
     line-height: 1.65;
-    background-image: 
-        radial-gradient(circle at 15% 10%, rgba(212, 175, 55, 0.07), transparent 35%),
-        radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.06), transparent 40%);
     min-height: 100vh;
+    /* Latar Belakang Mewah: Gradasi Kerajaan Eropa + Pola Batik Kawung Nusantara Halus */
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.14) 0%, transparent 55%),
+        radial-gradient(circle at 15% 40%, rgba(220, 38, 38, 0.06) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(29, 78, 216, 0.07) 0%, transparent 45%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af37' stroke-opacity='0.055' stroke-width='1'%3E%3Ccircle cx='30' cy='30' r='22'/%3E%3Ccircle cx='0' cy='0' r='22'/%3E%3Ccircle cx='60' cy='0' r='22'/%3E%3Ccircle cx='0' cy='60' r='22'/%3E%3Ccircle cx='60' cy='60' r='22'/%3E%3Cpath d='M30 8 L34 26 L52 30 L34 34 L30 52 L26 34 L8 30 L26 26 Z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* Header Mewah */
+/* Pita Merah Putih Indonesia di Bagian Paling Atas */
+.indo-ribbon {
+    width: 100%;
+    height: 8px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 12px rgba(220, 38, 38, 0.4);
+}
+
+.ribbon-red {
+    height: 4px;
+    background: linear-gradient(90deg, #991b1b, #ef4444, #991b1b);
+}
+
+.ribbon-white {
+    height: 4px;
+    background: linear-gradient(90deg, #e2e8f0, #ffffff, #e2e8f0);
+}
+
+/* Header Bergaya Istana Eropa & Keraton Nusantara */
 .hero {
     text-align: center;
-    padding: 4.5rem 1.5rem 3.5rem;
-    border-bottom: 1px solid var(--border-subtle);
-    background: linear-gradient(180deg, rgba(17, 24, 39, 0.9) 0%, rgba(9, 13, 22, 0.4) 100%);
+    padding: 3.5rem 1.5rem 4rem;
+    position: relative;
+    background: linear-gradient(180deg, rgba(13, 20, 36, 0.95) 0%, rgba(7, 11, 20, 0.6) 100%);
+    border-bottom: 2px solid var(--border-gold);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
-.hero-badge {
-    display: inline-block;
-    padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 0.75rem;
+/* Barisan Logo Garuda Merah Putih & Tut Wuri Handayani */
+.emblem-bar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.75rem 2rem;
+    margin-bottom: 1.8rem;
+    background: rgba(17, 25, 44, 0.85);
+    border: 1px solid var(--border-gold);
+    border-radius: 60px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(212, 175, 55, 0.08);
+}
+
+.emblem-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+}
+
+.emblem-svg {
+    width: 44px;
+    height: 46px;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
+}
+
+.emblem-item span {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 1.5px;
-    color: var(--gold-primary);
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    background: rgba(212, 175, 55, 0.08);
-    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+    color: var(--gold-light);
+    line-height: 1.25;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-    background: linear-gradient(135deg, #ffffff 30%, var(--gold-light) 70%, var(--gold-primary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.emblem-item small {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+}
+
+.emblem-divider {
+    width: 1px;
+    height: 36px;
+    background: linear-gradient(180deg, transparent, var(--gold-primary), transparent);
+}
+
+.hero-ornament {
+    font-family: 'Cinzel', serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--gold-primary);
     margin-bottom: 0.8rem;
 }
 
+/* Tipografi Serif Klasik Ala Eropa */
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3.3rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ffffff 15%, var(--gold-light) 50%, var(--gold-primary) 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+    margin-bottom: 1rem;
+}
+
 .hero p {
-    font-size: 1.1rem;
-    max-width: 640px;
+    font-size: 1.08rem;
+    max-width: 660px;
     margin: 0 auto;
     color: var(--text-muted);
+    font-weight: 400;
 }
 
 /* Container Utama */
 .container {
-    max-width: 1140px;
-    margin: 3rem auto;
+    max-width: 1160px;
+    margin: 3.5rem auto;
     padding: 0 1.5rem;
 }
 
-/* Pencarian & Filter */
+/* Pencarian & Filter Mewah */
 .controls {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.25rem;
-    margin-bottom: 3rem;
+    gap: 1.4rem;
+    margin-bottom: 3.5rem;
 }
 
 .search-wrapper {
     position: relative;
     width: 100%;
-    max-width: 480px;
+    max-width: 520px;
 }
 
 .search-icon {
     position: absolute;
-    left: 18px;
+    left: 20px;
     top: 50%;
     transform: translateY(-50%);
     width: 18px;
     height: 18px;
-    color: var(--text-muted);
+    color: var(--gold-primary);
 }
 
 #search-input {
     width: 100%;
-    padding: 14px 20px 14px 48px;
+    padding: 15px 22px 15px 50px;
     background-color: var(--bg-card);
-    border: 1px solid var(--border-subtle);
+    border: 1px solid var(--border-gold);
     border-radius: 50px;
     color: var(--text-main);
     font-size: 0.95rem;
     outline: none;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+#search-input::placeholder {
+    color: #94a3b8;
 }
 
 #search-input:focus {
-    border-color: var(--gold-primary);
-    box-shadow: 0 0 0 3px var(--gold-glow);
+    border-color: var(--gold-light);
+    box-shadow: 0 0 0 4px var(--gold-glow);
 }
 
 .filter-buttons {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
 .btn-filter {
-    padding: 10px 22px;
-    border: 1px solid var(--border-subtle);
-    border-radius: 50px;
-    background-color: var(--bg-card);
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-family: 'Cinzel', serif;
+    padding: 10px 24px;
+    border: 1px solid var(--border-gold);
+    border-radius: 4px;
+    background: linear-gradient(180deg, #162038, #0f1626);
+    color: var(--gold-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: all 0.3s ease;
 }
 
 .btn-filter:hover {
-    color: var(--text-main);
-    border-color: rgba(212, 175, 55, 0.5);
+    border-color: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.2);
 }
 
 .btn-filter.active {
-    background: linear-gradient(135deg, var(--gold-primary), #b59226);
-    color: #090d16;
-    border-color: transparent;
-    font-weight: 700;
-    box-shadow: 0 4px 15px var(--gold-glow);
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-primary), var(--gold-dark));
+    color: #070b14;
+    border-color: var(--gold-light);
+    box-shadow: 0 6px 20px var(--gold-glow);
 }
 
-/* Grid Kartu Rambu */
+/* Grid Kartu Rambu Bergaya Bingkai Lukisan Klasik */
 .signs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+    gap: 28px;
 }
 
 .sign-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: 18px;
-    padding: 2rem 1.5rem;
+    background: linear-gradient(160deg, #131c31 0%, #0b111e 100%);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 2.2rem 1.6rem;
     text-align: center;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.35s ease;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
-.sign-card::before {
+/* Bingkai Ganda Bagian Dalam Ala Klasik Eropa */
+.sign-card::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--gold-primary);
-    opacity: 0.6;
+    inset: 7px;
+    border: 1px solid rgba(212, 175, 55, 0.16);
+    border-radius: 8px;
+    pointer-events: none;
 }
-
-.sign-card.larangan::before { background: var(--danger); }
-.sign-card.peringatan::before { background: var(--warning); }
-.sign-card.perintah::before { background: var(--info); }
 
 .sign-card:hover {
-    transform: translateY(-6px);
-    background: var(--bg-card-hover);
-    border-color: rgba(212, 175, 55, 0.35);
-    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.4);
+    transform: translateY(-8px);
+    border-color: var(--gold-light);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(212, 175, 55, 0.15);
 }
 
-/* Kotak Ikon Vektor Rambu */
+/* Wadah Simbol Rambu */
 .sign-visual {
-    width: 104px;
-    height: 104px;
+    width: 108px;
+    height: 108px;
     margin: 0 auto 1.4rem;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 12px;
+    background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.01) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .indo-sign {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
 }
 
 .badge {
     display: inline-block;
-    padding: 4px 12px;
-    border-radius: 50px;
-    font-size: 0.72rem;
+    padding: 4px 14px;
+    border-radius: 3px;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 1.2px;
     margin-bottom: 0.9rem;
+    position: relative;
+    z-index: 1;
 }
 
 .bg-larangan {
-    background: rgba(239, 68, 68, 0.15);
+    background: rgba(220, 38, 38, 0.18);
     color: #fca5a5;
-    border: 1px solid rgba(239, 68, 68, 0.3);
+    border: 1px solid rgba(220, 38, 38, 0.45);
 }
 
 .bg-peringatan {
-    background: rgba(234, 179, 8, 0.15);
+    background: rgba(234, 179, 8, 0.18);
     color: #fde047;
-    border: 1px solid rgba(234, 179, 8, 0.3);
+    border: 1px solid rgba(234, 179, 8, 0.45);
 }
 
 .bg-perintah {
-    background: rgba(59, 130, 246, 0.15);
+    background: rgba(37, 99, 235, 0.22);
     color: #93c5fd;
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    border: 1px solid rgba(59, 130, 246, 0.45);
 }
 
 .sign-card h3 {
+    font-family: 'Cinzel', serif;
     font-size: 1.15rem;
     font-weight: 700;
-    color: var(--text-main);
-    margin-bottom: 0.6rem;
+    color: var(--gold-light);
+    margin-bottom: 0.65rem;
+    position: relative;
+    z-index: 1;
 }
 
 .sign-card p {
     color: var(--text-muted);
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: 1.65;
+    position: relative;
+    z-index: 1;
 }
 
-/* Bagian Kuis Mewah */
+/* Bagian Kuis Bergaya Aula Kerajaan */
 .quiz-section {
-    margin-top: 4.5rem;
-    background: linear-gradient(145deg, #111827, #0d1320);
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    border-radius: 22px;
-    padding: 3rem 2rem;
+    margin-top: 5rem;
+    background: linear-gradient(145deg, #121b30, #090e1a);
+    border: 2px solid var(--border-gold);
+    border-radius: 16px;
+    padding: 3.5rem 2rem;
     text-align: center;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    position: relative;
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.55);
+}
+
+.quiz-section::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 10px;
+    pointer-events: none;
 }
 
 .quiz-tag {
-    font-size: 0.72rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     color: var(--gold-primary);
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
 }
 
 .quiz-header h2 {
-    font-size: 1.8rem;
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
     font-weight: 800;
+    color: var(--gold-light);
     margin-bottom: 0.4rem;
 }
 
@@ -287,14 +382,16 @@ body {
 }
 
 .quiz-card {
-    max-width: 600px;
+    max-width: 620px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 #quiz-question {
     font-size: 1.15rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.6rem;
     color: #ffffff;
 }
 
@@ -305,21 +402,21 @@ body {
 }
 
 .quiz-btn {
-    padding: 15px 20px;
+    padding: 15px 22px;
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-subtle);
-    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 8px;
     color: var(--text-main);
     font-size: 0.98rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
     text-align: left;
 }
 
 .quiz-btn:hover:not(:disabled) {
-    background: rgba(212, 175, 55, 0.08);
-    border-color: var(--gold-primary);
+    background: rgba(212, 175, 55, 0.12);
+    border-color: var(--gold-light);
 }
 
 .quiz-btn:disabled {
@@ -327,20 +424,22 @@ body {
 }
 
 #quiz-feedback {
-    margin-top: 1.3rem;
+    margin-top: 1.4rem;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.96rem;
 }
 
 #next-btn {
-    margin-top: 1.3rem;
-    padding: 12px 28px;
-    background: linear-gradient(135deg, var(--gold-primary), #b59226);
-    color: #090d16;
+    font-family: 'Cinzel', serif;
+    margin-top: 1.4rem;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-primary), var(--gold-dark));
+    color: #070b14;
     border: none;
-    border-radius: 50px;
-    font-size: 0.95rem;
-    font-weight: 700;
+    border-radius: 4px;
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 1px;
     cursor: pointer;
     display: none;
     transition: transform 0.2s;
@@ -354,12 +453,28 @@ body {
 footer {
     text-align: center;
     padding: 3rem 1.5rem;
-    margin-top: 4rem;
+    margin-top: 4.5rem;
     color: var(--text-muted);
     font-size: 0.9rem;
-    border-top: 1px solid var(--border-subtle);
+    border-top: 1px solid var(--border-gold);
+    background: rgba(7, 11, 20, 0.9);
+}
+
+.footer-ornament {
+    color: var(--gold-primary);
+    letter-spacing: 8px;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
 }
 
 footer strong {
-    color: var(--gold-primary);
+    font-family: 'Cinzel', serif;
+    color: var(--gold-light);
+}
+
+/* Responsif Layar HP */
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2.2rem; }
+    .emblem-bar { flex-direction: column; border-radius: 20px; gap: 0.8rem; }
+    .emblem-divider { width: 80%; height: 1px; }
 }
