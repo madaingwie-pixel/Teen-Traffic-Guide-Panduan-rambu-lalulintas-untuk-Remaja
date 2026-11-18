@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoadWise Youth - Panduan Rambu Lalu Lintas Remaja</title>
+    <!-- Menghubungkan ke file style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header>
+        <h1>🚦 RoadWise Youth</h1>
+        <p>Pahami Rambu, Jadilah Pengendara Muda yang Cerdas dan Selamat di Jalan Raya.</p>
+    </header>
+
+    <div class="container">
+        <!-- Kontrol Pencarian & Filter -->
+        <div class="controls">
+            <input type="text" id="search-input" onkeyup="searchSigns()" placeholder="🔍 Cari nama atau arti rambu (misal: tikungan, kecepatan)...">
+            
+            <div class="filter-buttons">
+                <button class="btn-filter active" onclick="filterSigns('all', this)">Semua Rambu</button>
+                <button class="btn-filter" onclick="filterSigns('larangan', this)">Rambu Larangan</button>
+                <button class="btn-filter" onclick="filterSigns('peringatan', this)">Rambu Peringatan</button>
+                <button class="btn-filter" onclick="filterSigns('perintah', this)">Rambu Perintah</button>
+            </div>
+        </div>
+
+        <!-- Grid Kartu Rambu -->
+        <div class="signs-grid" id="signs-container">
+            <div class="sign-card larangan">
+                <div class="sign-icon icon-larangan">S</div>
+                <span class="badge bg-larangan">Larangan</span>
+                <h3>Dilarang Berhenti</h3>
+                <p>Kendaraan dilarang berhenti sejenak maupun parkir karena memicu kemacetan dan tabrakan beruntun.</p>
+            </div>
+
+            <div class="sign-card larangan">
+                <div class="sign-icon icon-larangan">🚫</div>
+                <span class="badge bg-larangan">Larangan</span>
+                <h3>Dilarang Masuk</h3>
+                <p>Jalan khusus arus dari arah berlawanan. Melanggar rambu ini berisiko tinggi kecelakaan adu banteng.</p>
+            </div>
+
+            <div class="sign-card peringatan">
+                <div class="sign-icon icon-peringatan"><span>⚠️</span></div>
+                <span class="badge bg-peringatan">Peringatan</span>
+                <h3>Tikungan Tajam</h3>
+                <p>Kurangi kecepatan sebelum memasuki tikungan dan dilarang mendahului kendaraan lain.</p>
+            </div>
+
+            <div class="sign-card peringatan">
+                <div class="sign-icon icon-peringatan"><span>🚸</span></div>
+                <span class="badge bg-peringatan">Peringatan</span>
+                <h3>Area Penyeberangan</h3>
+                <p>Banyak pelajar atau pejalan kaki menyeberang. Wajib perlambat kendaraan dan utamakan pejalan kaki.</p>
+            </div>
+
+            <div class="sign-card perintah">
+                <div class="sign-icon icon-perintah">⬅️</div>
+                <span class="badge bg-perintah">Perintah</span>
+                <h3>Wajib Ikuti Arah</h3>
+                <p>Pengendara wajib belok mengikuti arah panah yang ditentukan demi kelancaran arus lalu lintas.</p>
+            </div>
+
+            <div class="sign-card perintah">
+                <div class="sign-icon icon-perintah">60</div>
+                <span class="badge bg-perintah">Perintah</span>
+                <h3>Batas Kecepatan</h3>
+                <p>Kecepatan maksimal yang diperbolehkan adalah 60 km/jam untuk menjaga jarak pengereman aman.</p>
+            </div>
+        </div>
+
+        <!-- Mini Kuis Interaktif -->
+        <div class="quiz-section">
+            <h2>🧠 Uji Pemahamanmu!</h2>
+            <p id="quiz-progress"></p>
+            <p id="quiz-question"></p>
+            <div class="quiz-options" id="quiz-options"></div>
+            <p id="quiz-feedback"></p>
+            <button id="next-btn"></button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 RoadWise Youth Project. Dibuat untuk keselamatan berkendara generasi muda.</p>
+    </footer>
+
+    <!-- Menghubungkan ke file script.js -->
+    <script src="script.js"></script>
+</body>
+</html>
