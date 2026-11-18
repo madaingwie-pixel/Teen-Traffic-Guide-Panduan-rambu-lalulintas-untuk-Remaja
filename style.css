@@ -1,17 +1,12 @@
-/* Import Font Modern Kekinian (Plus Jakarta Sans) dari Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-    /* Palet Warna Nusantara & Perkotaan Modern */
     --bg-main: #f8fafc;
     --bg-card: #ffffff;
     --primary-navy: #0f172a;
     --urban-teal: #0d9488;
     --urban-teal-dark: #0f766e;
     --batik-gold: #d97706;
-    --batik-sogan: #78350f;
-    --indo-red: #e11d48;
-    --indo-blue: #2563eb;
     --text-dark: #1e293b;
     --text-muted: #64748b;
     --border-soft: #e2e8f0;
@@ -32,17 +27,15 @@ body {
     color: var(--text-dark);
     line-height: 1.6;
     min-height: 100vh;
-    /* Pola Background Geometri Batik Kawung Halus + Gradasi Tropis */
     background-image: 
-        radial-gradient(circle at 15% 10%, rgba(13, 148, 136, 0.06) 0%, transparent 40%),
-        radial-gradient(circle at 85% 30%, rgba(217, 119, 6, 0.06) 0%, transparent 40%),
-        radial-gradient(#cbd5e1 1.2px, transparent 1.2px),
-        radial-gradient(#cbd5e1 1.2px, var(--bg-main) 1.2px);
-    background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
-    background-position: 0 0, 0 0, 0 0, 18px 18px;
+        radial-gradient(circle at 15% 10%, rgba(13, 148, 136, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(217, 119, 6, 0.05) 0%, transparent 40%),
+        radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
+    background-size: 100% 100%, 100% 100%, 36px 36px;
+    background-position: 0 0, 0 0, 0 0;
 }
 
-/* Aksen Pita Merah Putih Elegan di Paling Atas */
+/* Pita Merah Putih */
 .indo-ribbon {
     width: 100%;
     height: 6px;
@@ -50,47 +43,61 @@ body {
     flex-direction: row;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
+.ribbon-red { width: 50%; height: 100%; background: linear-gradient(90deg, #be123c, #e11d48); }
+.ribbon-white { width: 50%; height: 100%; background-color: #ffffff; }
 
-.ribbon-red {
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(90deg, #be123c, #e11d48);
+/* Navigasi Multi-Halaman */
+.main-nav {
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.nav-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+}
+.nav-logo span { color: var(--urban-teal); }
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active {
+    color: #fbbf24;
 }
 
-.ribbon-white {
-    width: 50%;
-    height: 100%;
-    background-color: #ffffff;
-}
-
-/* Header Bergaya Modern Urban & Nuansa Kepulauan Indonesia */
+/* Hero Section */
 .hero {
     text-align: center;
     padding: 4rem 1.5rem 4.5rem;
-    /* Gradasi Laut Kepulauan & Kota Malam Modern dengan Pola Garis Halus */
-    background: 
-        radial-gradient(circle at 20% 20%, rgba(20, 184, 166, 0.25) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(217, 119, 6, 0.2) 0%, transparent 50%),
-        linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #115e59 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #115e59 100%);
     color: #ffffff;
     border-bottom-left-radius: 36px;
     border-bottom-right-radius: 36px;
     box-shadow: 0 15px 35px -10px rgba(15, 23, 42, 0.2);
-    position: relative;
-    overflow: hidden;
 }
-
-/* Ornamen Lingkaran Pulau Halus di Background Hero */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
-    background-size: 28px 28px;
-    pointer-events: none;
+.sub-hero {
+    padding: 3rem 1.5rem 3.5rem;
 }
-
-/* Barisan Logo Garuda & Tut Wuri Handayani (Glassmorphism Style) */
 .emblem-bar {
     display: inline-flex;
     align-items: center;
@@ -100,52 +107,19 @@ body {
     margin-bottom: 1.8rem;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 999px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    position: relative;
-    z-index: 1;
 }
-
-.emblem-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-align: left;
-}
-
-.emblem-svg, .emblem-img {
-    width: 34px;
-    height: 34px;
-    object-fit: contain;
-}
-
-.emblem-item span {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #ffffff;
-    line-height: 1.25;
-    display: block;
-}
-
-.emblem-item small {
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: #cbd5e1;
-}
-
-.emblem-divider {
-    width: 1px;
-    height: 28px;
-    background-color: rgba(255, 255, 255, 0.25);
-}
+.emblem-item { display: flex; align-items: center; gap: 10px; text-align: left; }
+.emblem-svg, .emblem-img { width: 34px; height: 34px; object-fit: contain; }
+.emblem-item span { font-size: 0.85rem; font-weight: 700; color: #ffffff; line-height: 1.25; display: block; }
+.emblem-item small { font-size: 0.75rem; font-weight: 500; color: #cbd5e1; }
+.emblem-divider { width: 1px; height: 28px; background-color: rgba(255, 255, 255, 0.25); }
 
 .hero-ornament {
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1.5px;
-    text-transform: uppercase;
     color: #fbbf24;
     background: rgba(251, 191, 36, 0.15);
     border: 1px solid rgba(251, 191, 36, 0.3);
@@ -153,65 +127,66 @@ body {
     padding: 6px 16px;
     border-radius: 999px;
     margin-bottom: 1.2rem;
-    position: relative;
-    z-index: 1;
 }
+.hero h1 { font-size: 2.3rem; font-weight: 800; margin-bottom: 1rem; }
+.hero p { font-size: 1.1rem; max-width: 640px; margin: 0 auto 1.8rem; color: #e2e8f0; }
 
-.hero h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.btn-primary, .btn-secondary {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 12px 24px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.btn-primary {
+    background-color: var(--urban-teal);
     color: #ffffff;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    position: relative;
-    z-index: 1;
+    box-shadow: 0 6px 16px rgba(13, 148, 136, 0.3);
 }
-
-.hero p {
-    font-size: 1.1rem;
-    max-width: 640px;
-    margin: 0 auto;
-    color: #e2e8f0;
-    font-weight: 400;
-    position: relative;
-    z-index: 1;
+.btn-primary:hover { background-color: var(--urban-teal-dark); transform: translateY(-2px); }
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
 }
+.btn-secondary:hover { background-color: rgba(255, 255, 255, 0.2); transform: translateY(-2px); }
 
 /* Container Utama */
-.container {
-    max-width: 1140px;
-    margin: 2.8rem auto;
-    padding: 0 1.5rem;
-}
+.container { max-width: 1140px; margin: 2.8rem auto; padding: 0 1.5rem; }
 
-/* Kontrol Pencarian & Tombol Soft */
-.controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.4rem;
-    margin-bottom: 3rem;
+/* Features Grid (Home) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
-
-.search-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 520px;
+.feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: 22px;
+    padding: 2.2rem 1.8rem;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s;
 }
+.feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+.feature-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.feature-card h3 { font-size: 1.25rem; font-weight: 700; color: var(--primary-navy); margin-bottom: 0.6rem; }
+.feature-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.2rem; }
+.text-link { color: var(--urban-teal); font-weight: 700; text-decoration: none; }
+.text-link:hover { text-decoration: underline; }
 
-.search-icon {
-    position: absolute;
-    left: 18px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    color: var(--text-muted);
-    transition: color 0.2s;
-}
-
-/* Kotak Input Pencarian Modern */
+/* Kontrol Pencarian & Filter Rambu */
+.controls { display: flex; flex-direction: column; align-items: center; gap: 1.4rem; margin-bottom: 3rem; }
+.search-wrapper { position: relative; width: 100%; max-width: 520px; }
+.search-icon { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--text-muted); }
 #search-input {
     width: 100%;
     padding: 14px 20px 14px 48px;
@@ -223,26 +198,10 @@ body {
     font-size: 0.95rem;
     outline: none;
     box-shadow: var(--shadow-soft);
-    transition: all 0.25s ease;
 }
+#search-input:focus { border-color: var(--urban-teal); box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.12); }
 
-#search-input::placeholder {
-    color: #94a3b8;
-}
-
-#search-input:focus {
-    border-color: var(--urban-teal);
-    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.12);
-}
-
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-/* Tombol Filter Soft Pill */
+.filter-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
 .btn-filter {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.88rem;
@@ -252,31 +211,14 @@ body {
     color: var(--text-muted);
     border: 1px solid var(--border-soft);
     border-radius: 999px;
-    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.2s;
 }
+.btn-filter:hover { background-color: #f1f5f9; color: var(--text-dark); }
+.btn-filter.active { background-color: var(--urban-teal); color: #ffffff; border-color: var(--urban-teal); }
 
-.btn-filter:hover {
-    background-color: #f1f5f9;
-    color: var(--text-dark);
-    transform: translateY(-1px);
-}
-
-.btn-filter.active {
-    background-color: var(--urban-teal);
-    color: #ffffff;
-    border-color: var(--urban-teal);
-    box-shadow: 0 6px 16px rgba(13, 148, 136, 0.28);
-}
-
-/* Grid Kartu Rambu Bergaya Katalog Outlet Modern */
-.signs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-    gap: 24px;
-}
-
+/* Grid Kartu Rambu */
+.signs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); gap: 24px; }
 .sign-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-soft);
@@ -285,30 +227,8 @@ body {
     text-align: center;
     box-shadow: var(--shadow-soft);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    overflow: hidden;
 }
-
-/* Aksen Garis Batik/Emas Tipis di Atas Kartu Saat Hover */
-.sign-card::top {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--urban-teal), var(--batik-gold));
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.sign-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(13, 148, 136, 0.35);
-    box-shadow: var(--shadow-hover);
-}
-
-/* Wadah Rambu Lembut */
+.sign-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
 .sign-visual {
     width: 104px;
     height: 104px;
@@ -320,182 +240,65 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
 }
+.indo-sign { width: 100%; height: 100%; }
 
-.sign-card:hover .sign-visual {
-    transform: scale(1.05);
-}
-
-.indo-sign {
-    width: 100%;
-    height: 100%;
-}
-
-/* Badge Kategori Soft */
 .badge {
-    font-family: 'Plus Jakarta Sans', sans-serif;
     display: inline-block;
     padding: 5px 14px;
     border-radius: 999px;
     font-size: 0.72rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
     text-transform: uppercase;
     margin-bottom: 0.85rem;
 }
+.bg-larangan { background-color: #ffe4e6; color: #be123c; }
+.bg-peringatan { background-color: #fef3c7; color: #b45309; }
+.bg-perintah { background-color: #dbeafe; color: #1d4ed8; }
 
-.bg-larangan { 
-    background-color: #ffe4e6; 
-    color: #be123c; 
-}
-.bg-peringatan { 
-    background-color: #fef3c7; 
-    color: #b45309; 
-}
-.bg-perintah { 
-    background-color: #dbeafe; 
-    color: #1d4ed8; 
-}
+.sign-card h3 { font-size: 1.12rem; font-weight: 700; color: var(--primary-navy); margin-bottom: 0.6rem; }
+.sign-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.55; text-align: left; }
+.sign-card p strong { color: var(--text-dark); }
 
-.sign-card h3 {
-    font-size: 1.12rem;
-    font-weight: 700;
-    line-height: 1.35;
-    color: var(--primary-navy);
-    margin-bottom: 0.6rem;
-}
-
-.sign-card p {
-    color: var(--text-muted);
-    font-size: 0.92rem;
-    line-height: 1.55;
-}
-
-/* Bagian Kuis dengan Sentuhan Batik Sogan & Urban Modern */
-.quiz-section {
-    margin-top: 4.5rem;
-    background: 
-        radial-gradient(circle at top right, rgba(217, 119, 6, 0.14), transparent 45%),
-        radial-gradient(circle at bottom left, rgba(13, 148, 136, 0.14), transparent 45%),
-        linear-gradient(145deg, #0f172a, #1e293b);
-    border-radius: 28px;
-    padding: 3rem 1.8rem;
-    text-align: center;
-    box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.25);
-    position: relative;
-}
-
-.quiz-tag {
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: #fbbf24;
-    background: rgba(251, 191, 36, 0.14);
-    padding: 6px 14px;
-    border-radius: 999px;
-    display: inline-block;
-    margin-bottom: 0.9rem;
-}
-
-.quiz-header h2 {
-    font-size: 1.75rem;
-    font-weight: 800;
-    line-height: 1.3;
-    color: #ffffff;
-    margin-bottom: 0.5rem;
-}
-
-#quiz-progress {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #94a3b8;
-    margin-bottom: 1.8rem;
-}
-
-.quiz-card {
-    max-width: 620px;
-    margin: 0 auto;
-    background-color: #ffffff;
+/* Info Kartu (UU Halaman) */
+.content-section { display: flex; flex-direction: column; gap: 2rem; max-width: 800px; margin: 0 auto; }
+.info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
     border-radius: 22px;
-    padding: 2rem;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    padding: 2.2rem;
+    box-shadow: var(--shadow-soft);
+}
+.info-card h2 { font-size: 1.35rem; color: var(--primary-navy); margin-bottom: 1rem; }
+.info-card p, .info-card li { color: var(--text-muted); margin-bottom: 0.8rem; font-size: 1.02rem; }
+.info-card ul, .info-card ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+.highlight-box {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: #991b1b !important;
+    font-size: 0.95rem;
 }
 
-#quiz-question {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: var(--primary-navy);
-    line-height: 1.45;
-}
-
-.quiz-options {
+/* Quotes Grid */
+.quotes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.quote-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: 22px;
+    padding: 2.2rem 1.8rem;
+    box-shadow: var(--shadow-soft);
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    justify-content: space-between;
 }
+.quote-mark { font-size: 3rem; color: var(--urban-teal); font-family: serif; line-height: 1; margin-bottom: 0.5rem; display: block; }
+.quote-card p { font-size: 1.05rem; font-style: italic; color: var(--text-dark); margin-bottom: 1.2rem; }
+.quote-author { font-size: 0.88rem; font-weight: 700; color: var(--batik-gold); }
 
-/* Tombol Pilihan Kuis Soft */
-.quiz-btn {
-    padding: 14px 18px;
-    background-color: #f8fafc;
-    border: 1.5px solid var(--border-soft);
-    border-radius: 14px;
-    color: var(--text-dark);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    text-align: left;
-    transition: all 0.2s ease;
-}
-
-.quiz-btn:hover:not(:disabled) {
-    background-color: #f0fdfa;
-    border-color: var(--urban-teal);
-    color: var(--urban-teal-dark);
-    transform: translateX(4px);
-}
-
-.quiz-btn:disabled {
-    cursor: not-allowed;
-    opacity: 0.85;
-}
-
-#quiz-feedback {
-    margin-top: 1.3rem;
-    font-weight: 600;
-    font-size: 0.95rem;
-    background: #f1f5f9;
-    color: var(--primary-navy);
-    padding: 12px 16px;
-    border-radius: 12px;
-}
-
-#next-btn {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 0.92rem;
-    font-weight: 700;
-    margin-top: 1.3rem;
-    padding: 12px 26px;
-    background-color: var(--urban-teal);
-    color: #ffffff;
-    border: none;
-    border-radius: 999px;
-    box-shadow: 0 6px 16px rgba(13, 148, 136, 0.25);
-    cursor: pointer;
-    display: none;
-    transition: all 0.2s ease;
-}
-
-#next-btn:hover {
-    background-color: var(--urban-teal-dark);
-    transform: translateY(-2px);
-}
-
-/* Footer Bersih & Modern */
+/* Footer */
 footer {
     text-align: center;
     padding: 2.5rem 1.5rem;
@@ -505,34 +308,13 @@ footer {
     background-color: #ffffff;
     border-top: 1px solid var(--border-soft);
 }
+.footer-ornament { color: var(--batik-gold); letter-spacing: 6px; font-size: 1rem; margin-bottom: 0.5rem; }
+footer strong { font-weight: 700; color: var(--primary-navy); }
 
-.footer-ornament {
-    color: var(--batik-gold);
-    letter-spacing: 6px;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-footer strong {
-    font-weight: 700;
-    color: var(--primary-navy);
-}
-
-/* Responsif Layar HP */
-@media (max-width: 600px) {
-    .hero {
-        padding: 3rem 1.2rem 3.5rem;
-        border-bottom-left-radius: 24px;
-        border-bottom-right-radius: 24px;
-    }
+/* Responsif HP */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Dapat dikustomisasi atau dibuat toggle menu */
     .hero h1 { font-size: 1.75rem; }
-    .emblem-bar { 
-        flex-direction: column; 
-        gap: 0.8rem; 
-        border-radius: 20px;
-        padding: 1rem 1.4rem;
-    }
+    .emblem-bar { flex-direction: column; gap: 0.8rem; border-radius: 20px; padding: 1rem 1.4rem; }
     .emblem-divider { width: 80%; height: 1px; }
-    .quiz-section { padding: 2.2rem 1.2rem; }
-    .quiz-card { padding: 1.4rem; }
-}v
+}
