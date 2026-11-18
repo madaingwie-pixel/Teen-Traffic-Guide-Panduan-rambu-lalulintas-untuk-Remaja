@@ -1,74 +1,122 @@
 :root {
-    --primary: #2563eb;
-    --primary-dark: #1e3a8a;
-    --dark: #1e293b;
-    --light: #f8fafc;
-    --gray: #64748b;
-    --warning: #f59e0b;
+    --bg-main: #090d16;
+    --bg-card: #111827;
+    --bg-card-hover: #172033;
+    --gold-primary: #d4af37;
+    --gold-light: #f3e5ab;
+    --gold-glow: rgba(212, 175, 55, 0.22);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-subtle: rgba(255, 255, 255, 0.08);
     --danger: #ef4444;
+    --warning: #eab308;
     --info: #3b82f6;
-    --success: #16a34a;
+    --success: #22c55e;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
-    background-color: var(--light);
-    color: var(--dark);
-    line-height: 1.6;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.65;
+    background-image: 
+        radial-gradient(circle at 15% 10%, rgba(212, 175, 55, 0.07), transparent 35%),
+        radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.06), transparent 40%);
+    min-height: 100vh;
 }
 
-header {
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-    color: white;
+/* Header Mewah */
+.hero {
     text-align: center;
-    padding: 3rem 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 4.5rem 1.5rem 3.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+    background: linear-gradient(180deg, rgba(17, 24, 39, 0.9) 0%, rgba(9, 13, 22, 0.4) 100%);
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+.hero-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--gold-primary);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    background: rgba(212, 175, 55, 0.08);
+    margin-bottom: 1.2rem;
 }
 
-header p {
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #ffffff 30%, var(--gold-light) 70%, var(--gold-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.8rem;
+}
+
+.hero p {
     font-size: 1.1rem;
-    max-width: 600px;
+    max-width: 640px;
     margin: 0 auto;
-    opacity: 0.9;
+    color: var(--text-muted);
 }
 
+/* Container Utama */
 .container {
-    max-width: 1000px;
-    margin: 2rem auto;
+    max-width: 1140px;
+    margin: 3rem auto;
     padding: 0 1.5rem;
 }
 
+/* Pencarian & Filter */
 .controls {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 2rem;
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: var(--text-muted);
 }
 
 #search-input {
     width: 100%;
-    max-width: 400px;
-    padding: 12px 20px;
-    border: 2px solid #cbd5e1;
-    border-radius: 25px;
-    font-size: 1rem;
+    padding: 14px 20px 14px 48px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 50px;
+    color: var(--text-main);
+    font-size: 0.95rem;
     outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 #search-input:focus {
-    border-color: var(--primary);
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 0 3px var(--gold-glow);
 }
 
 .filter-buttons {
@@ -79,153 +127,199 @@ header p {
 }
 
 .btn-filter {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    background-color: #e2e8f0;
-    color: var(--dark);
-    font-weight: bold;
+    padding: 10px 22px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 50px;
+    background-color: var(--bg-card);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.25s ease;
 }
 
-.btn-filter:hover, .btn-filter.active {
-    background-color: var(--primary);
-    color: white;
+.btn-filter:hover {
+    color: var(--text-main);
+    border-color: rgba(212, 175, 55, 0.5);
 }
 
+.btn-filter.active {
+    background: linear-gradient(135deg, var(--gold-primary), #b59226);
+    color: #090d16;
+    border-color: transparent;
+    font-weight: 700;
+    box-shadow: 0 4px 15px var(--gold-glow);
+}
+
+/* Grid Kartu Rambu */
 .signs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+    gap: 24px;
 }
 
 .sign-card {
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
     text-align: center;
-    transition: transform 0.2s;
-    border-top: 5px solid var(--primary);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
+
+.sign-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gold-primary);
+    opacity: 0.6;
+}
+
+.sign-card.larangan::before { background: var(--danger); }
+.sign-card.peringatan::before { background: var(--warning); }
+.sign-card.perintah::before { background: var(--info); }
 
 .sign-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    background: var(--bg-card-hover);
+    border-color: rgba(212, 175, 55, 0.35);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.4);
 }
 
-.sign-card.larangan { border-top-color: var(--danger); }
-.sign-card.peringatan { border-top-color: var(--warning); }
-.sign-card.perintah { border-top-color: var(--info); }
-
-.sign-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1rem;
+/* Kotak Ikon Vektor Rambu */
+.sign-visual {
+    width: 104px;
+    height: 104px;
+    margin: 0 auto 1.4rem;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    font-weight: bold;
 }
 
-.icon-larangan {
-    border: 8px solid var(--danger);
-    border-radius: 50%;
-    color: var(--dark);
-    background: #fff;
-}
-
-.icon-peringatan {
-    background-color: var(--warning);
-    transform: rotate(45deg);
-    border-radius: 8px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-.icon-peringatan span {
-    transform: rotate(-45deg);
-}
-
-.icon-perintah {
-    background-color: var(--info);
-    color: white;
-    border-radius: 50%;
+.indo-sign {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
 }
 
 .badge {
     display: inline-block;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: white;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 0.9rem;
 }
 
-.bg-larangan { background-color: var(--danger); }
-.bg-peringatan { background-color: var(--warning); color: black; }
-.bg-perintah { background-color: var(--info); }
+.bg-larangan {
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.bg-peringatan {
+    background: rgba(234, 179, 8, 0.15);
+    color: #fde047;
+    border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.bg-perintah {
+    background: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
 
 .sign-card h3 {
-    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.6rem;
 }
 
 .sign-card p {
-    color: var(--gray);
-    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
 
+/* Bagian Kuis Mewah */
 .quiz-section {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    margin-top: 3rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-top: 4.5rem;
+    background: linear-gradient(145deg, #111827, #0d1320);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 22px;
+    padding: 3rem 2rem;
     text-align: center;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
 }
 
-.quiz-section h2 {
+.quiz-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--gold-primary);
+    display: block;
     margin-bottom: 0.5rem;
-    color: var(--primary-dark);
+}
+
+.quiz-header h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.4rem;
 }
 
 #quiz-progress {
     font-size: 0.9rem;
-    color: var(--gray);
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.quiz-card {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 #quiz-question {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: 1.2rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
 }
 
 .quiz-options {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    max-width: 450px;
-    margin: 0 auto;
+    gap: 12px;
 }
 
 .quiz-btn {
-    padding: 12px;
-    border: 2px solid #cbd5e1;
-    background: white;
-    border-radius: 8px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    color: var(--text-main);
+    font-size: 0.98rem;
+    font-weight: 500;
     cursor: pointer;
-    font-size: 1rem;
-    transition: 0.2s;
+    transition: all 0.2s ease;
     text-align: left;
 }
 
 .quiz-btn:hover:not(:disabled) {
-    background: #f1f5f9;
-    border-color: var(--primary);
+    background: rgba(212, 175, 55, 0.08);
+    border-color: var(--gold-primary);
 }
 
 .quiz-btn:disabled {
@@ -233,30 +327,39 @@ header p {
 }
 
 #quiz-feedback {
-    font-weight: bold;
-    margin-top: 1rem;
+    margin-top: 1.3rem;
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
 #next-btn {
-    margin-top: 1rem;
-    padding: 10px 20px;
-    background-color: var(--primary);
-    color: white;
+    margin-top: 1.3rem;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, var(--gold-primary), #b59226);
+    color: #090d16;
     border: none;
-    border-radius: 6px;
-    font-weight: bold;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
     cursor: pointer;
     display: none;
+    transition: transform 0.2s;
 }
 
 #next-btn:hover {
-    background-color: var(--primary-dark);
+    transform: scale(1.03);
 }
 
+/* Footer */
 footer {
     text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
-    color: var(--gray);
+    padding: 3rem 1.5rem;
+    margin-top: 4rem;
+    color: var(--text-muted);
     font-size: 0.9rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+footer strong {
+    color: var(--gold-primary);
 }
