@@ -10,9 +10,6 @@ body {
     background-color: #f8fafc;
     color: #1e293b;
     line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 /* --- PITA MERAH PUTIH --- */
@@ -28,10 +25,10 @@ body {
 .main-nav {
     background-color: #0f172a;
     padding: 16px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: sticky;
     top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 100;
 }
 
 .nav-container {
@@ -45,7 +42,7 @@ body {
 }
 
 .nav-logo {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     font-weight: 800;
     color: #ffffff;
     text-decoration: none;
@@ -76,65 +73,58 @@ body {
     font-weight: 700;
 }
 
-/* --- HERO SECTION DENGAN BACKGROUND FOTO --- */
+/* --- HERO SECTION (DENGAN FOTO BACKGROUND) --- */
 .hero {
-    /* Menggunakan gambar background dengan lapisan gelap transparan di atasnya */
-    background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), 
+    background-image: linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.85)), 
                       url("Siswa Bingung di Antara Rambu Lalu Lintas.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: #ffffff;
     text-align: center;
-    padding: 90px 20px;
+    padding: 80px 24px 96px;
 }
 
-.hero-content {
-    max-width: 760px;
-    margin: 0 auto;
-}
-
-.hero-badge {
-    display: inline-block;
-    font-size: 0.78rem;
+.hero-ornament {
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1.5px;
     color: #34d399;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     font-weight: 800;
-    margin-bottom: 16px;
-    line-height: 1.25;
+    max-width: 780px;
+    margin: 0 auto 18px;
+    line-height: 1.2;
     letter-spacing: -0.5px;
 }
 
 .hero p {
     font-size: 1.05rem;
-    color: #cbd5e1;
-    margin-bottom: 32px;
-    line-height: 1.6;
+    color: #e2e8f0;
+    max-width: 640px;
+    margin: 0 auto 32px;
 }
 
 .hero-actions {
     display: flex;
     justify-content: center;
-    gap: 14px;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
-/* Tombol */
 .btn-primary {
     background-color: #10b981;
     color: #ffffff;
-    padding: 13px 26px;
+    padding: 14px 28px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 700;
     font-size: 0.95rem;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
 .btn-primary:hover {
@@ -145,12 +135,13 @@ body {
 .btn-secondary {
     background-color: rgba(255, 255, 255, 0.1);
     color: #ffffff;
-    padding: 13px 26px;
+    padding: 14px 28px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(4px);
     transition: background-color 0.2s, transform 0.2s;
 }
 
@@ -160,12 +151,10 @@ body {
 }
 
 /* --- KONTEN UTAMA & KARTU FITUR --- */
-.main-container {
+.container {
     max-width: 1140px;
     margin: 0 auto;
-    padding: 60px 24px;
-    flex: 1;
-    width: 100%;
+    padding: 64px 24px;
 }
 
 .features-grid {
@@ -188,54 +177,43 @@ body {
 .feature-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
-    border-color: #cbd5e1;
-}
-
-.feature-icon {
-    font-size: 1.8rem;
-    width: 50px;
-    height: 50px;
-    background-color: #ecfdf5;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
 }
 
 .feature-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: #0f172a;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .feature-card p {
-    font-size: 0.93rem;
+    font-size: 0.95rem;
     color: #475569;
     margin-bottom: 24px;
     flex-grow: 1;
 }
 
-.card-link {
+.text-link {
     color: #059669;
     font-weight: 700;
     text-decoration: none;
-    font-size: 0.93rem;
+    font-size: 0.95rem;
 }
 
-.card-link:hover {
+.text-link:hover {
+    color: #047857;
     text-decoration: underline;
 }
 
 /* --- FOOTER --- */
-.site-footer {
+footer {
     background-color: #ffffff;
     border-top: 1px solid #e2e8f0;
     text-align: center;
     padding: 36px 24px;
+    margin-top: 40px;
     color: #64748b;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
 }
 
 .footer-ornament {
@@ -244,7 +222,7 @@ body {
     letter-spacing: 4px;
 }
 
-/* --- RESPONSIF (HP) --- */
+/* --- RESPONSIF HP --- */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
