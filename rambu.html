@@ -11,32 +11,37 @@
 </head>
 <body>
 
+    <!-- Pita Merah Putih -->
     <div class="indo-ribbon">
         <div class="ribbon-red"></div>
         <div class="ribbon-white"></div>
     </div>
 
+    <!-- Navigasi -->
     <nav class="main-nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo"><span>TeenTraffic</span>ID</a>
+            <a href="index.html" class="nav-logo"><span>TeenTraffic</span>Guide</a>
             <div class="nav-links">
                 <a href="index.html">Beranda</a>
                 <a href="rambu.html" class="active">Katalog Rambu</a>
                 <a href="uud.html">UU & Edukasi</a>
-                <a href="quotes.html">Quotes Remaja</a>
+                <a href="quotes.html">Quotes untuk Remaja</a>
             </div>
         </div>
     </nav>
 
+    <!-- Header Halaman Katalog -->
     <header class="hero sub-hero">
         <div class="hero-content">
-            <h1>Katalog Rambu Lalu Lintas Resmi</h1>
+            <div class="hero-ornament">✦ KATALOG INTERAKTIF RESMI ✦</div>
+            <h1>Katalog Rambu Lalu Lintas</h1>
             <p>Kenali arti, bentuk, dan aturan detail setiap rambu di jalan raya Indonesia agar terhindar dari pelanggaran dan kecelakaan.</p>
         </div>
     </header>
 
-    <main class="container">
-        <!-- Pencarian & Filter -->
+    <!-- Konten Utama -->
+    <main class="main-container">
+        <!-- Kotak Pencarian & Filter Kategori -->
         <section class="controls">
             <div class="search-wrapper">
                 <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -55,7 +60,7 @@
             </div>
         </section>
 
-        <!-- Grid Kartu Rambu Lengkap -->
+        <!-- Grid Kartu Rambu -->
         <section class="signs-grid" id="signs-container">
             
             <!-- 1. Dilarang Berhenti -->
@@ -69,7 +74,7 @@
                 </div>
                 <span class="badge bg-larangan">Rambu Larangan</span>
                 <h3>Dilarang Berhenti</h3>
-                <p><strong>Arti:</strong> Kendaraan dilarang berhenti sejenak atau parkir di ruas jalan ini.<br><strong>Risiko:</strong> Menyebabkan kemacetan dan membahayakan kendaraan lain.</p>
+                <p><strong>Arti:</strong> Kendaraan dilarang berhenti sejenak atau parkir di ruas jalan ini.<br><strong>Risiko:</strong> Menyebabkan kemacetan dan membahayakan pengendara lain.</p>
             </article>
 
             <!-- 2. Dilarang Masuk -->
@@ -220,7 +225,7 @@
                         <rect x="30" y="42" width="40" height="16" fill="#ffffff"/>
                     </svg>
                 </div>
-                <span class="badge bg-petunjuk">Rambu Petunjuk</span>
+                <span class="badge bg-petunjuk" style="background:#2563eb; color:#fff;">Rambu Petunjuk</span>
                 <h3>Petunjuk Rumah Sakit</h3>
                 <p><strong>Arti:</strong> Memberikan informasi lokasi fasilitas kesehatan terdekat.<br><strong>Risiko:</strong> Digunakan sebagai acuan darurat medis.</p>
             </article>
@@ -228,11 +233,46 @@
         </section>
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="site-footer">
         <div class="footer-ornament">✦ ❖ ✦</div>
         <p>&copy; 2026 <strong>Teen Traffic Guide</strong> &mdash; Generasi Muda Pelopor Keselamatan Berlalu Lintas Indonesia.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Skrip Pencarian & Filter Sederhana -->
+    <script>
+        function searchSigns() {
+            let input = document.getElementById('search-input').value.toLowerCase();
+            let cards = document.getElementsByClassName('sign-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let name = cards[i].getAttribute('data-name');
+                let text = cards[i].innerText.toLowerCase();
+                if (name.includes(input) || text.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+
+        function filterSigns(category, btn) {
+            let cards = document.getElementsByClassName('sign-card');
+            let buttons = document.getElementsByClassName('btn-filter');
+            
+            for (let b of buttons) {
+                b.classList.remove('active');
+            }
+            btn.classList.add('active');
+
+            for (let card of cards) {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
