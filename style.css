@@ -504,3 +504,88 @@ footer,
         padding: 20px;
     }
 }
+
+/* =========================================
+   STYLE KHUSUS HALAMAN QUOTES REMAJA
+   ========================================= */
+
+/* Reset kotak besar bawaan .container khusus di halaman quotes */
+.quotes-container {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 40px 20px !important;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Grid 2 Kolom untuk Kartu Quotes */
+.quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    margin-top: 10px;
+}
+
+/* Desain Tiap Kartu Quote (Gaya Modern / Neobrutalism) */
+.quote-card {
+    background-color: #ffffff;
+    border: 2px solid #1e293b;
+    border-radius: 16px;
+    padding: 32px 28px;
+    box-shadow: 6px 6px 0px #1e293b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Efek saat kartu diarahkan kursor (hover) */
+.quote-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px #dc2626; /* Aksen merah tema Indonesia */
+}
+
+/* Ikon Tanda Kutip Besar */
+.quote-mark {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 0.8;
+    color: #dc2626;
+    font-family: Georgia, serif;
+    margin-bottom: 12px;
+    user-select: none;
+}
+
+/* Teks Utama Kutipan */
+.quote-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #1e293b;
+    font-weight: 500;
+    margin: 0 0 24px 0;
+    flex-grow: 1;
+}
+
+/* Nama Pembuat Kutipan / Komunitas */
+.quote-author {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0f172a;
+    padding-top: 14px;
+    border-top: 1.5px dashed #cbd5e1;
+    display: block;
+}
+
+/* Responsif untuk layar HP */
+@media (max-width: 600px) {
+    .quotes-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .quote-card {
+        padding: 24px 20px;
+    }
+}
