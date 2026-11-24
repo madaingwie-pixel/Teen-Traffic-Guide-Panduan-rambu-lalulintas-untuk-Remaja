@@ -1,437 +1,499 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog Rambu Lalu Lintas - Teen Traffic Guide</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!-- Pita Merah Putih -->
+<div class="indo-ribbon">
+    <div class="ribbon-red"></div>
+    <div class="ribbon-white"></div>
+</div>
 
-    <!-- Pita Merah Putih -->
-    <div class="indo-ribbon">
-        <div class="ribbon-red"></div>
-        <div class="ribbon-white"></div>
+<!-- Navigasi -->
+<nav class="main-nav">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo"><span>TeenTraffic</span>Guide</a>
+        <div class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="rambu.html" class="active">Katalog Rambu</a>
+            <a href="uud.html">UU & Edukasi</a>
+            <a href="quotes.html">Quotes untuk Remaja</a>
+        </div>
     </div>
+</nav>
 
-    <!-- Navigasi -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo"><span>TeenTraffic</span>Guide</a>
-            <div class="nav-links">
-                <a href="index.html">Beranda</a>
-                <a href="rambu.html" class="active">Katalog Rambu</a>
-                <a href="uud.html">UU & Edukasi</a>
-                <a href="quotes.html">Quotes untuk Remaja</a>
-            </div>
+<!-- Header Halaman Katalog -->
+<header class="hero sub-hero">
+    <div class="hero-content">
+        <div class="hero-ornament">✦ KATALOG INTERAKTIF RESMI ✦</div>
+        <h1>Katalog Rambu Lalu Lintas</h1>
+        <p>Kenali arti, bentuk, dan aturan detail setiap rambu di jalan raya Indonesia agar terhindar dari pelanggaran dan kecelakaan.</p>
+    </div>
+</header>
+
+<!-- Konten Utama -->
+<main class="main-container">
+    <!-- Kotak Pencarian & Filter Kategori -->
+    <section class="controls">
+        <div class="search-wrapper">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="search-input" onkeyup="searchSigns()" placeholder="Cari nama rambu atau kata kunci...">
         </div>
-    </nav>
-
-    <!-- Header Halaman Katalog -->
-    <header class="hero sub-hero">
-        <div class="hero-content">
-            <div class="hero-ornament">✦ KATALOG INTERAKTIF RESMI ✦</div>
-            <h1>Katalog Rambu Lalu Lintas</h1>
-            <p>Kenali arti, bentuk, dan aturan detail setiap rambu di jalan raya Indonesia agar terhindar dari pelanggaran dan kecelakaan.</p>
+        
+        <div class="filter-buttons">
+            <button class="btn-filter active" onclick="filterSigns('all', this)">Semua Rambu</button>
+            <button class="btn-filter" onclick="filterSigns('larangan', this)">Larangan</button>
+            <button class="btn-filter" onclick="filterSigns('peringatan', this)">Peringatan</button>
+            <button class="btn-filter" onclick="filterSigns('perintah', this)">Perintah</button>
+            <button class="btn-filter" onclick="filterSigns('petunjuk', this)">Petunjuk</button>
         </div>
-    </header>
+    </section>
 
-    <!-- Konten Utama -->
-    <main class="main-container">
-        <!-- Kotak Pencarian & Filter Kategori -->
-        <section class="controls">
-            <div class="search-wrapper">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    <!-- Grid Kartu Rambu -->
+    <section class="signs-grid" id="signs-container">
+        
+        <!-- --- TABEL I: RAMBU PERINGATAN --- -->
+
+        <!-- 1. Tikungan Kanan -->
+        <article class="sign-card peringatan" data-name="tikungan kanan">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
+                    <path d="M 40 72 L 40 48 L 62 34" fill="none" stroke="#0f172a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polygon points="68,30 53,31 61,43" fill="#0f172a"/>
                 </svg>
-                <input type="text" id="search-input" onkeyup="searchSigns()" placeholder="Cari nama rambu atau kata kunci...">
             </div>
-            
-            <div class="filter-buttons">
-                <button class="btn-filter active" onclick="filterSigns('all', this)">Semua Rambu</button>
-                <button class="btn-filter" onclick="filterSigns('larangan', this)">Larangan</button>
-                <button class="btn-filter" onclick="filterSigns('peringatan', this)">Peringatan</button>
-                <button class="btn-filter" onclick="filterSigns('perintah', this)">Perintah</button>
-                <button class="btn-filter" onclick="filterSigns('petunjuk', this)">Petunjuk</button>
+            <span class="badge bg-peringatan">Rambu Peringatan</span>
+            <h3>Tikungan Kanan</h3>
+            <p><strong>Arti:</strong> Peringatan adanya tikungan ke arah kanan di depan.<br><strong>Risiko:</strong> Kurangi kecepatan dan tetap di jalur aman.</p>
+        </article>
+
+        <!-- 2. Tikungan Kiri -->
+        <article class="sign-card peringatan" data-name="tikungan kiri">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
+                    <path d="M 60 72 L 60 48 L 38 34" fill="none" stroke="#0f172a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polygon points="32,30 47,31 39,43" fill="#0f172a"/>
+                </svg>
             </div>
-        </section>
+            <span class="badge bg-peringatan">Rambu Peringatan</span>
+            <h3>Tikungan Kiri</h3>
+            <p><strong>Arti:</strong> Peringatan adanya tikungan ke arah kiri di depan.<br><strong>Risiko:</strong> Waspada kendaraan dari arah berlawanan.</p>
+        </article>
 
-        <!-- Grid Kartu Rambu -->
-        <section class="signs-grid" id="signs-container">
-            
-            <!-- 1. Dilarang Berhenti -->
-            <article class="sign-card larangan" data-name="dilarang berhenti">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
-                        <text x="50" y="65" font-family="Arial, sans-serif" font-weight="900" font-size="46" fill="#0f172a" text-anchor="middle">S</text>
-                        <line x1="20" y1="20" x2="80" y2="80" stroke="#dc2626" stroke-width="9"/>
-                    </svg>
-                </div>
-                <span class="badge bg-larangan">Rambu Larangan</span>
-                <h3>Dilarang Berhenti</h3>
-                <p><strong>Arti:</strong> Kendaraan dilarang berhenti sejenak atau parkir di ruas jalan ini.<br><strong>Risiko:</strong> Menyebabkan kemacetan dan membahayakan pengendara lain.</p>
-            </article>
+        <!-- 3. Tikungan Tajam Kanan -->
+        <article class="sign-card peringatan" data-name="tikungan tajam kanan">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
+                    <path d="M 35 70 Q 65 70 65 40" fill="none" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+                    <polygon points="65,30 57,43 73,43" fill="#0f172a"/>
+                </svg>
+            </div>
+            <span class="badge bg-peringatan">Rambu Peringatan</span>
+            <h3>Tikungan Tajam Kanan</h3>
+            <p><strong>Arti:</strong> Peringatan tikungan tajam ke kanan.<br><strong>Risiko:</strong> Risiko tergelincir jika memacu kecepatan tinggi.</p>
+        </article>
 
-            <!-- 2. Dilarang Masuk -->
-            <article class="sign-card larangan" data-name="dilarang masuk">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <circle cx="50" cy="50" r="45" fill="#dc2626"/>
-                        <rect x="18" y="41" width="64" height="18" rx="2" fill="#ffffff"/>
-                    </svg>
-                </div>
-                <span class="badge bg-larangan">Rambu Larangan</span>
-                <h3>Dilarang Masuk</h3>
-                <p><strong>Arti:</strong> Menutup akses bagi segala jenis kendaraan untuk masuk ke jalur tersebut.<br><strong>Risiko:</strong> Berisiko tinggi memicu tabrakan adu banteng fatal.</p>
-            </article>
+        <!-- 4. Tikungan Tajam Kiri -->
+        <article class="sign-card peringatan" data-name="tikungan tajam kiri">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
+                    <path d="M 65 70 Q 35 70 35 40" fill="none" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+                    <polygon points="35,30 27,43 43,43" fill="#0f172a"/>
+                </svg>
+            </div>
+            <span class="badge bg-peringatan">Rambu Peringatan</span>
+            <h3>Tikungan Tajam Kiri</h3>
+            <p><strong>Arti:</strong> Peringatan tikungan tajam ke kiri.<br><strong>Risiko:</strong> Wajib menurunkan gigi kendaraan.</p>
+        </article>
 
-            <!-- 3. Dilarang Putar Balik -->
-            <article class="sign-card larangan" data-name="dilarang putar balik">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
-                        <path d="M 62 72 L 62 42 A 12 12 0 0 0 38 42 L 38 62" fill="none" stroke="#0f172a" stroke-width="7" stroke-linecap="round"/>
-                        <polygon points="38,72 29,58 47,58" fill="#0f172a"/>
-                        <line x1="20" y1="20" x2="80" y2="80" stroke="#dc2626" stroke-width="9"/>
-                    </svg>
-                </div>
-                <span class="badge bg-larangan">Rambu Larangan</span>
-                <h3>Dilarang Putar Balik</h3>
-                <p><strong>Arti:</strong> Pengendara dilarang melakukan manuver putar arah di bukaan median ini.<br><strong>Risiko:</strong> Mengganggu arus lalu lintas cepat.</p>
-            </article>
+        <!-- 5. Turunan Curam -->
+        <article class="sign-card peringatan" data-name="turunan curam">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
+                    <line x1="28" y1="40" x2="72" y2="65" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+                    <text x="65" y="45" font-size="16" font-weight="bold" fill="#0f172a">10%</text>
+                </svg>
+            </div>
+            <span class="badge bg-peringatan">Rambu Peringatan</span>
+            <h3>Turunan Curam</h3>
+            <p><strong>Arti:</strong> Jalan menurun dengan persentase kemiringan curam.<br><strong>Risiko:</strong> Rem blong akibat panas berlebih.</p>
+        </article>
 
-            <!-- 4. Batas Kecepatan Maksimum 60 KM/Jam -->
-            <article class="sign-card larangan" data-name="kecepatan maksimal 60 km/jam">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
-                        <text x="50" y="62" font-family="Arial, sans-serif" font-weight="800" font-size="34" fill="#0f172a" text-anchor="middle">60</text>
-                    </svg>
-                </div>
-                <span class="badge bg-larangan">Rambu Larangan</span>
-                <h3>Maksimal 60 km/jam</h3>
-                <p><strong>Arti:</strong> Kendaraan dilarang melaju melebihi batas kecepatan 60 km/jam.<br><strong>Risiko:</strong> Sulit melakukan pengereman mendadak.</p>
-            </article>
+        <!-- 6. Tanjakan Curam -->
+        <article class="sign-card peringatan" data-name="tanjakan curam">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
+                    <line x1="28" y1="65" x2="72" y2="40" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+                    <text x="65" y="65" font-size="16" font-weight="bold" fill="#0f172a">10%</text>
+                </svg>
+            </div>
+            <span class="badge bg-peringatan">Rambu Peringatan</span>
+            <h3>Tanjakan Curam</h3>
+            <p><strong>Arti:</strong> Jalan menanjak dengan kemiringan tinggi.<br><strong>Risiko:</strong> Kendaraan kehilangan tenaga jika gigi tidak pas.</p>
+        </article>
 
-            <!-- 5. Dilarang Mendahului -->
-            <article class="sign-card larangan" data-name="dilarang mendahului menyalip">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
-                        <path d="M 35 60 L 65 40 M 45 40 L 65 40 L 65 60" fill="none" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
-                        <line x1="20" y1="20" x2="80" y2="80" stroke="#dc2626" stroke-width="9"/>
-                    </svg>
-                </div>
-                <span class="badge bg-larangan">Rambu Larangan</span>
-                <h3>Dilarang Mendahului</h3>
-                <p><strong>Arti:</strong> Pengendara dilarang mendahului kendaraan lain di depannya.<br><strong>Risiko:</strong> Dipasang di jalur rawan tikungan atau jembatan.</p>
-            </article>
+        <!-- 7. Penyempitan Jalan Kiri Kanan -->
+        <article class="sign-card peringatan" data-name="penyempitan jalan kiri kanan">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
+                    <line x1="35" y1="28" x2="45" y2="72" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+                    <line x1="65" y1="28" x2="55" y2="72" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <span class="badge bg-peringatan">Rambu Peringatan</span>
+            <h3>Penyempitan Jalan</h3>
+            <p><strong>Arti:</strong> Lebar badan jalan menyempit dari kedua sisi.<br><strong>Risiko:</strong> Kurangi kecepatan dan atur posisi kendaraan.</p>
+        </article>
 
-            <!-- 6. Sepeda Motor Dilarang Masuk -->
-            <article class="sign-card larangan" data-name="sepeda motor dilarang masuk">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
-                        <circle cx="35" cy="65" r="8" fill="none" stroke="#0f172a" stroke-width="4"/>
-                        <circle cx="65" cy="65" r="8" fill="none" stroke="#0f172a" stroke-width="4"/>
-                        <path d="M 35 65 L 45 45 L 60 45 L 65 65 M 48 45 L 40 32 L 52 32 L 56 45" fill="none" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
-                        <line x1="20" y1="20" x2="80" y2="80" stroke="#dc2626" stroke-width="9"/>
-                    </svg>
-                </div>
-                <span class="badge bg-larangan">Rambu Larangan</span>
-                <h3>Sepeda Motor Dilarang Masuk</h3>
-                <p><strong>Arti:</strong> Jalur khusus yang tidak boleh dilewati oleh kendaraan roda dua.<br><strong>Risiko:</strong> Membahayakan keselamatan karena bercampur dengan kendaraan berkecepatan tinggi.</p>
-            </article>
+        <!-- 8. Jembatan Sempit -->
+        <article class="sign-card peringatan" data-name="jembatan sempit">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
+                    <path d="M 30 35 L 50 65 L 70 35" fill="none" stroke="#0f172a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <span class="badge bg-peringatan">Rambu Peringatan</span>
+            <h3>Jembatan Sempit</h3>
+            <p><strong>Arti:</strong> Lebar jembatan di depan lebih sempit dari jalan.<br><strong>Risiko:</strong> Tidak muat untuk dua kendaraan besar sekaligus.</p>
+        </article>
 
-            <!-- 7. Batas Ruang Lebar -->
-            <article class="sign-card larangan" data-name="batas ruang lebar 2.9 meter">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
-                        <text x="50" y="54" font-family="Arial, sans-serif" font-weight="800" font-size="28" fill="#0f172a" text-anchor="middle">2,9 m</text>
-                        <polygon points="26,45 34,40 34,50" fill="#dc2626"/>
-                        <polygon points="74,45 66,40 66,50" fill="#dc2626"/>
-                    </svg>
-                </div>
-                <span class="badge bg-larangan">Rambu Larangan</span>
-                <h3>Batas Ruang Lebar</h3>
-                <p><strong>Arti:</strong> Kendaraan dengan lebar lebih dari 2,9 meter dilarang lewat.<br><strong>Risiko:</strong> Tersangkut di terowongan atau jembatan sempit.</p>
-            </article>
+        <!-- 9. Lampu Pengatur Lalu Lintas -->
+        <article class="sign-card peringatan" data-name="lampu pengatur lalu lintas">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
+                    <rect x="42" y="32" width="16" height="36" rx="4" fill="#0f172a"/>
+                    <circle cx="50" cy="40" r="3" fill="#dc2626"/>
+                    <circle cx="50" cy="50" r="3" fill="#facc15"/>
+                    <circle cx="50" cy="60" r="3" fill="#10b981"/>
+                </svg>
+            </div>
+            <span class="badge bg-peringatan">Rambu Peringatan</span>
+            <h3>Lampu Lalu Lintas di Depan</h3>
+            <p><strong>Arti:</strong> Mendekati persimpangan dengan alat pemberi isyarat lampu.<br><strong>Risiko:</strong> Siap-siap berhenti saat lampu merah.</p>
+        </article>
 
-            <!-- 8. Batas Tonase / Muatan Maksimum -->
-            <article class="sign-card larangan" data-name="batas tonase 8 ton berat">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
-                        <text x="50" y="52" font-family="Arial, sans-serif" font-weight="800" font-size="30" fill="#0f172a" text-anchor="middle">8 T</text>
-                    </svg>
-                </div>
-                <span class="badge bg-larangan">Rambu Larangan</span>
-                <h3>Batas Tonase Maksimum</h3>
-                <p><strong>Arti:</strong> Larangan lewat bagi kendaraan dengan berat total melebihi 8 Ton.<br><strong>Risiko:</strong> Menyebabkan jembatan ambruk atau jalan ambles.</p>
-            </article>
+        <!-- 10. Persimpangan Tiga / T -->
+        <article class="sign-card peringatan" data-name="persimpangan tiga t">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
+                    <line x1="50" y1="35" x2="50" y2="70" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+                    <line x1="30" y1="35" x2="70" y2="35" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <span class="badge bg-peringatan">Rambu Peringatan</span>
+            <h3>Persimpangan Tiga (Bentuk T)</h3>
+            <p><strong>Arti:</strong> Mendekati persimpangan jalan bercabang tiga.<br><strong>Risiko:</strong> Waspada kendaraan keluar masuk jalur.</p>
+        </article>
 
-            <!-- 9. Tikungan Tajam ke Kanan -->
-            <article class="sign-card peringatan" data-name="tikungan tajam">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
-                        <path d="M 40 72 L 40 48 L 62 34" fill="none" stroke="#0f172a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-                        <polygon points="68,30 53,31 61,43" fill="#0f172a"/>
-                    </svg>
-                </div>
-                <span class="badge bg-peringatan">Rambu Peringatan</span>
-                <h3>Tikungan Tajam ke Kanan</h3>
-                <p><strong>Arti:</strong> Memperingatkan adanya tikungan tajam ke arah kanan di depan.<br><strong>Risiko:</strong> Wajib mengurangi kecepatan kendaraan.</p>
-            </article>
+        <!-- --- TABEL IIA: RAMBU LARANGAN --- -->
 
-            <!-- 10. Tikungan Ganda -->
-            <article class="sign-card peringatan" data-name="tikungan ganda">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
-                        <path d="M 40 75 Q 40 55 55 50 Q 70 45 70 30" fill="none" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
-                        <polygon points="74,25 63,33 70,39" fill="#0f172a"/>
-                    </svg>
-                </div>
-                <span class="badge bg-peringatan">Rambu Peringatan</span>
-                <h3>Tikungan Ganda (Ulang-alik)</h3>
-                <p><strong>Arti:</strong> Peringatan adanya dua tikungan beruntun berlawanan arah.<br><strong>Risiko:</strong> Berisiko kehilangan kendali jika kecepatan tinggi.</p>
-            </article>
+        <!-- 11. Dilarang Berhenti -->
+        <article class="sign-card larangan" data-name="dilarang berhenti">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
+                    <text x="50" y="65" font-family="Arial, sans-serif" font-weight="900" font-size="46" fill="#0f172a" text-anchor="middle">S</text>
+                    <line x1="20" y1="20" x2="80" y2="80" stroke="#dc2626" stroke-width="9"/>
+                </svg>
+            </div>
+            <span class="badge bg-larangan">Rambu Larangan</span>
+            <h3>Dilarang Berhenti</h3>
+            <p><strong>Arti:</strong> Kendaraan dilarang berhenti sejenak atau parkir.<br><strong>Risiko:</strong> Menyebabkan kemacetan lalu lintas.</p>
+        </article>
 
-            <!-- 11. Area Penyeberangan / ZoSS -->
-            <article class="sign-card peringatan" data-name="penyeberangan anak sekolah zoss">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
-                        <circle cx="50" cy="32" r="5" fill="#0f172a"/>
-                        <path d="M 50 39 L 50 54 L 42 68 M 50 54 L 58 68 M 40 46 L 60 46" stroke="#0f172a" stroke-width="5" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <span class="badge bg-peringatan">Rambu Peringatan</span>
-                <h3>Area Penyeberangan (ZoSS)</h3>
-                <p><strong>Arti:</strong> Zona Selamat Sekolah, banyak pelajar menyeberang.<br><strong>Risiko:</strong> Wajib ekstra hati-hati dan dahulukan pejalan kaki.</p>
-            </article>
+        <!-- 12. Dilarang Parkir -->
+        <article class="sign-card larangan" data-name="dilarang parkir">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
+                    <text x="50" y="65" font-family="Arial, sans-serif" font-weight="900" font-size="46" fill="#0f172a" text-anchor="middle">P</text>
+                    <line x1="20" y1="20" x2="80" y2="80" stroke="#dc2626" stroke-width="9"/>
+                </svg>
+            </div>
+            <span class="badge bg-larangan">Rambu Larangan</span>
+            <h3>Dilarang Parkir</h3>
+            <p><strong>Arti:</strong> Dilarang memarkir kendaraan di area ini.<br><strong>Risiko:</strong> Kendaraan dapat diderek atau ditilang.</p>
+        </article>
 
-            <!-- 12. Persimpangan Empat -->
-            <article class="sign-card peringatan" data-name="persimpangan rawan">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
-                        <line x1="50" y1="30" x2="50" y2="70" stroke="#0f172a" stroke-width="7" stroke-linecap="round"/>
-                        <line x1="30" y1="50" x2="70" y2="50" stroke="#0f172a" stroke-width="7" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <span class="badge bg-peringatan">Rambu Peringatan</span>
-                <h3>Persimpangan Empat</h3>
-                <p><strong>Arti:</strong> Mendekati persimpangan jalan tanpa lampu pengatur lalu lintas.<br><strong>Risiko:</strong> Beri prioritas bagi kendaraan di jalan utama.</p>
-            </article>
+        <!-- 13. Dilarang Masuk -->
+        <article class="sign-card larangan" data-name="dilarang masuk">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <circle cx="50" cy="50" r="45" fill="#dc2626"/>
+                    <rect x="18" y="41" width="64" height="18" rx="2" fill="#ffffff"/>
+                </svg>
+            </div>
+            <span class="badge bg-larangan">Rambu Larangan</span>
+            <h3>Dilarang Masuk</h3>
+            <p><strong>Arti:</strong> Menutup akses segala jenis kendaraan.<br><strong>Risiko:</strong> Tabrakan fatal melawan arus.</p>
+        </article>
 
-            <!-- 13. Jalan Menurun Curam -->
-            <article class="sign-card peringatan" data-name="jalan menurun curam">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
-                        <line x1="28" y1="40" x2="72" y2="65" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
-                        <rect x="52" y="47" width="16" height="9" rx="2" fill="#0f172a" transform="rotate(28 60 52)"/>
-                    </svg>
-                </div>
-                <span class="badge bg-peringatan">Rambu Peringatan</span>
-                <h3>Jalan Menurun Curam</h3>
-                <p><strong>Arti:</strong> Memasuki ruas jalan dengan turunan curam ke bawah.<br><strong>Risiko:</strong> Rem blong akibat panas berlebih (gunakan gigi rendah).</p>
-            </article>
+        <!-- 14. Dilarang Putar Balik -->
+        <article class="sign-card larangan" data-name="dilarang putar balik">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
+                    <path d="M 62 72 L 62 42 A 12 12 0 0 0 38 42 L 38 62" fill="none" stroke="#0f172a" stroke-width="7" stroke-linecap="round"/>
+                    <polygon points="38,72 29,58 47,58" fill="#0f172a"/>
+                    <line x1="20" y1="20" x2="80" y2="80" stroke="#dc2626" stroke-width="9"/>
+                </svg>
+            </div>
+            <span class="badge bg-larangan">Rambu Larangan</span>
+            <h3>Dilarang Putar Balik</h3>
+            <p><strong>Arti:</strong> Dilarang memutar arah kendaraan.<br><strong>Risiko:</strong> Mengganggu kelancaran arus cepat.</p>
+        </article>
 
-            <!-- 14. Penyempitan Jalan Kanan -->
-            <article class="sign-card peringatan" data-name="penyempitan jalan">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#facc15" stroke="#0f172a" stroke-width="4"/>
-                        <line x1="38" y1="28" x2="38" y2="72" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
-                        <path d="M 62 28 L 62 50 L 50 72" fill="none" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <span class="badge bg-peringatan">Rambu Peringatan</span>
-                <h3>Penyempitan Jalan Kanan</h3>
-                <p><strong>Arti:</strong> Lebar badan jalan sebelah kanan menyempit di depan.<br><strong>Risiko:</strong> Wajib kurangi kecepatan dan atur antrean kendaraan.</p>
-            </article>
+        <!-- 15. Batas Kecepatan Maksimum 60 -->
+        <article class="sign-card larangan" data-name="kecepatan maksimal 60">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
+                    <text x="50" y="62" font-family="Arial, sans-serif" font-weight="800" font-size="34" fill="#0f172a" text-anchor="middle">60</text>
+                </svg>
+            </div>
+            <span class="badge bg-larangan">Rambu Larangan</span>
+            <h3>Maksimal 60 km/jam</h3>
+            <p><strong>Arti:</strong> Kecepatan kendaraan dibatasi maksimal 60 km/jam.<br><strong>Risiko:</strong> Sulit kendali saat rem mendadak.</p>
+        </article>
 
-            <!-- 15. Wajib Ikuti Arah Kiri -->
-            <article class="sign-card perintah" data-name="wajib arah kiri">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <circle cx="50" cy="50" r="45" fill="#2563eb" stroke="#ffffff" stroke-width="3"/>
-                        <line x1="72" y1="50" x2="36" y2="50" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
-                        <polygon points="24,50 42,36 42,64" fill="#ffffff"/>
-                    </svg>
-                </div>
-                <span class="badge bg-perintah">Rambu Perintah</span>
-                <h3>Wajib Ikuti Arah Kiri</h3>
-                <p><strong>Arti:</strong> Pengendara wajib mengarahkan kendaraannya ke sisi kiri.<br><strong>Risiko:</strong> Melanggar berarti melawan arus searah.</p>
-            </article>
+        <!-- 16. Mobil Barang Dilarang Masuk -->
+        <article class="sign-card larangan" data-name="mobil barang dilarang masuk">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
+                    <rect x="30" y="45" width="28" height="20" fill="none" stroke="#0f172a" stroke-width="4"/>
+                    <circle cx="38" cy="68" r="5" fill="none" stroke="#0f172a" stroke-width="3"/>
+                    <circle cx="50" cy="68" r="5" fill="none" stroke="#0f172a" stroke-width="3"/>
+                    <line x1="20" y1="20" x2="80" y2="80" stroke="#dc2626" stroke-width="9"/>
+                </svg>
+            </div>
+            <span class="badge bg-larangan">Rambu Larangan</span>
+            <h3>Mobil Barang Dilarang Masuk</h3>
+            <p><strong>Arti:</strong> Truk dan kendaraan angkutan barang dilarang lewat.<br><strong>Risiko:</strong> Merusak infrastruktur atau jalan lingkungan.</p>
+        </article>
 
-            <!-- 16. Batas Kecepatan Minimum -->
-            <article class="sign-card perintah" data-name="kecepatan minimum">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <circle cx="50" cy="50" r="45" fill="#2563eb" stroke="#ffffff" stroke-width="3"/>
-                        <text x="50" y="63" font-family="Arial, sans-serif" font-weight="800" font-size="36" fill="#ffffff" text-anchor="middle">40</text>
-                    </svg>
-                </div>
-                <span class="badge bg-perintah">Rambu Perintah</span>
-                <h3>Batas Kecepatan Minimum</h3>
-                <p><strong>Arti:</strong> Pengendara wajib memacu kendaraan minimal 40 km/jam.<br><strong>Risiko:</strong> Dilarang berjalan terlalu lambat di jalan tol/cepat.</p>
-            </article>
+        <!-- 17. Sepeda Motor Dilarang Masuk -->
+        <article class="sign-card larangan" data-name="sepeda motor dilarang masuk">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
+                    <circle cx="35" cy="65" r="8" fill="none" stroke="#0f172a" stroke-width="4"/>
+                    <circle cx="65" cy="65" r="8" fill="none" stroke="#0f172a" stroke-width="4"/>
+                    <line x1="20" y1="20" x2="80" y2="80" stroke="#dc2626" stroke-width="9"/>
+                </svg>
+            </div>
+            <span class="badge bg-larangan">Rambu Larangan</span>
+            <h3>Sepeda Motor Dilarang Masuk</h3>
+            <p><strong>Arti:</strong> Jalur terlarang bagi kendaraan roda dua.<br><strong>Risiko:</strong> Membahayakan keselamatan jiwa.</p>
+        </article>
 
-            <!-- 17. Jalur Wajib Sepeda -->
-            <article class="sign-card perintah" data-name="jalur sepeda">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <circle cx="50" cy="50" r="45" fill="#2563eb" stroke="#ffffff" stroke-width="3"/>
-                        <circle cx="35" cy="62" r="10" fill="none" stroke="#ffffff" stroke-width="4"/>
-                        <circle cx="65" cy="62" r="10" fill="none" stroke="#ffffff" stroke-width="4"/>
-                        <path d="M 35 62 L 50 45 L 65 62 M 50 45 L 50 32 L 40 32" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <span class="badge bg-perintah">Rambu Perintah</span>
-                <h3>Jalur Wajib Sepeda</h3>
-                <p><strong>Arti:</strong> Jalur khusus yang diperuntukkan bagi pengendara sepeda.<br><strong>Risiko:</strong> Kendaraan bermotor dilarang menggunakan jalur ini.</p>
-            </article>
+        <!-- 18. Batas Tonase 8 Ton -->
+        <article class="sign-card larangan" data-name="batas tonase 8 ton">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#dc2626" stroke-width="9"/>
+                    <text x="50" y="52" font-family="Arial, sans-serif" font-weight="800" font-size="30" fill="#0f172a" text-anchor="middle">8 T</text>
+                </svg>
+            </div>
+            <span class="badge bg-larangan">Rambu Larangan</span>
+            <h3>Batas Tonase Maksimum</h3>
+            <p><strong>Arti:</strong> Larangan lewat bagi muatan di atas 8 Ton.<br><strong>Risiko:</strong> Jembatan atau jalan ambles.</p>
+        </article>
 
-            <!-- 18. Petunjuk Rumah Sakit -->
-            <article class="sign-card petunjuk" data-name="rumah sakit medis petunjuk">
-                <div class="sign-visual">
-                    <svg viewBox="0 0 100 100" class="indo-sign">
-                        <rect x="15" y="15" width="70" height="70" rx="8" fill="#1d4ed8" stroke="#ffffff" stroke-width="3"/>
-                        <rect x="42" y="30" width="16" height="40" fill="#ffffff"/>
-                        <rect x="30" y="42" width="40" height="16" fill="#ffffff"/>
-                    </svg>
-                </div>
-                <span class="badge bg-petunjuk" style="background:#2563eb; color:#fff;">Rambu Petunjuk</span>
-                <h3>Petunjuk Rumah Sakit</h3>
-                <p><strong>Arti:</strong> Memberikan informasi lokasi fasilitas kesehatan terdekat.<br><strong>Risiko:</strong> Digunakan sebagai acuan darurat medis.</p>
-            </article>
+        <!-- --- TABEL IIB: RAMBU PERINTAH --- -->
 
-            <!-- 19. Plang Petunjuk Tol (Jombang & Kertosono) -->
-            <article class="sign-card petunjuk" data-name="plang petunjuk jalan tol arah jombang kertosono">
-                <div class="sign-visual highway-sign-box">
-                    <div class="highway-board">
-                        <div class="highway-exit-badge">KELUAR <span>687</span></div>
-                        <div class="highway-destination">
-                            <span class="exit-arrow">⬉</span>
-                            <div class="dest-text">
-                                <strong>Jombang</strong>
-                                <small>Ploso</small>
-                            </div>
+        <!-- 19. Wajib Ikuti Arah Kiri -->
+        <article class="sign-card perintah" data-name="wajib arah kiri">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <circle cx="50" cy="50" r="45" fill="#2563eb" stroke="#ffffff" stroke-width="3"/>
+                    <line x1="72" y1="50" x2="36" y2="50" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+                    <polygon points="24,50 42,36 42,64" fill="#ffffff"/>
+                </svg>
+            </div>
+            <span class="badge bg-perintah">Rambu Perintah</span>
+            <h3>Wajib Ikuti Arah Kiri</h3>
+            <p><strong>Arti:</strong> Pengendara wajib belok atau mengarah ke kiri.<br><strong>Risiko:</strong> Melanggar berarti melawan arus.</p>
+        </article>
+
+        <!-- 20. Wajib Ikuti Arah Kanan -->
+        <article class="sign-card perintah" data-name="wajib arah kanan">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <circle cx="50" cy="50" r="45" fill="#2563eb" stroke="#ffffff" stroke-width="3"/>
+                    <line x1="28" y1="50" x2="64" y2="50" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+                    <polygon points="76,50 58,36 58,64" fill="#ffffff"/>
+                </svg>
+            </div>
+            <span class="badge bg-perintah">Rambu Perintah</span>
+            <h3>Wajib Ikuti Arah Kanan</h3>
+            <p><strong>Arti:</strong> Pengendara wajib mengarahkan ke sisi kanan.<br><strong>Risiko:</strong> Keluar dari jalur aman lalu lintas.</p>
+        </article>
+
+        <!-- 21. Batas Kecepatan Minimum 40 -->
+        <article class="sign-card perintah" data-name="kecepatan minimum 40">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <circle cx="50" cy="50" r="45" fill="#2563eb" stroke="#ffffff" stroke-width="3"/>
+                    <text x="50" y="63" font-family="Arial, sans-serif" font-weight="800" font-size="36" fill="#ffffff" text-anchor="middle">40</text>
+                </svg>
+            </div>
+            <span class="badge bg-perintah">Rambu Perintah</span>
+            <h3>Batas Kecepatan Minimum</h3>
+            <p><strong>Arti:</strong> Wajib memacu kendaraan minimal 40 km/jam.<br><strong>Risiko:</strong> Menyebabkan hambatan arus tol.</p>
+        </article>
+
+        <!-- 22. Jalur Wajib Sepeda -->
+        <article class="sign-card perintah" data-name="jalur sepeda">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <circle cx="50" cy="50" r="45" fill="#2563eb" stroke="#ffffff" stroke-width="3"/>
+                    <circle cx="35" cy="62" r="10" fill="none" stroke="#ffffff" stroke-width="4"/>
+                    <circle cx="65" cy="62" r="10" fill="none" stroke="#ffffff" stroke-width="4"/>
+                </svg>
+            </div>
+            <span class="badge bg-perintah">Rambu Perintah</span>
+            <h3>Jalur Wajib Sepeda</h3>
+            <p><strong>Arti:</strong> Khusus diperuntukkan bagi pengendara sepeda.<br><strong>Risiko:</strong> Larangan bagi kendaraan bermotor.</p>
+        </article>
+
+        <!-- --- TABEL III: RAMBU PETUNJUK --- -->
+
+        <!-- 23. Petunjuk Rumah Sakit -->
+        <article class="sign-card petunjuk" data-name="rumah sakit medis petunjuk">
+            <div class="sign-visual">
+                <svg viewBox="0 0 100 100" class="indo-sign">
+                    <rect x="15" y="15" width="70" height="70" rx="8" fill="#1d4ed8" stroke="#ffffff" stroke-width="3"/>
+                    <rect x="42" y="30" width="16" height="40" fill="#ffffff"/>
+                    <rect x="30" y="42" width="40" height="16" fill="#ffffff"/>
+                </svg>
+            </div>
+            <span class="badge bg-petunjuk" style="background:#2563eb; color:#fff;">Rambu Petunjuk</span>
+            <h3>Petunjuk Rumah Sakit</h3>
+            <p><strong>Arti:</strong> Informasi fasilitas kesehatan terdekat.<br><strong>Risiko:</strong> Acuan darurat medis.</p>
+        </article>
+
+        <!-- 24. Plang Petunjuk Tol (Jombang & Kertosono) -->
+        <article class="sign-card petunjuk" data-name="plang petunjuk jalan tol arah jombang kertosono">
+            <div class="sign-visual highway-sign-box">
+                <div class="highway-board">
+                    <div class="highway-exit-badge">KELUAR <span>687</span></div>
+                    <div class="highway-destination">
+                        <span class="exit-arrow">⬉</span>
+                        <div class="dest-text">
+                            <strong>Jombang</strong>
+                            <small>Ploso</small>
                         </div>
                     </div>
                 </div>
-                <span class="badge bg-petunjuk" style="background:#047857; color:#fff;">Plang Informasi Tol</span>
-                <h3>Papan Petunjuk Jurusan Tol</h3>
-                <p><strong>Arti:</strong> Panduan arah navigasi resmi di jalan tol antar-kota.<br><strong>Risiko:</strong> Membantu pengemudi tidak salah jalur atau terlewat pintu keluar.</p>
-            </article>
+            </div>
+            <span class="badge bg-petunjuk" style="background:#047857; color:#fff;">Plang Informasi Tol</span>
+            <h3>Papan Petunjuk Jurusan Tol</h3>
+            <p><strong>Arti:</strong> Panduan arah navigasi resmi di jalan tol.<br><strong>Risiko:</strong> Menghindari salah jalur atau terlewat.</p>
+        </article>
 
-            <!-- 20. Plang Petunjuk Jurusan Wilayah (Cemara) -->
-            <article class="sign-card petunjuk" data-name="plang petunjuk arah cemara">
-                <div class="sign-visual highway-sign-box">
-                    <div class="highway-board">
-                        <div class="highway-destination" style="border-top: none; padding-top: 0;">
-                            <span class="exit-arrow" style="font-size: 1.2rem;">➔</span>
-                            <div class="dest-text">
-                                <strong>CEMARA</strong>
-                                <small>Petunjuk Arah Wilayah</small>
-                            </div>
+        <!-- 25. Plang Petunjuk Arah Cemara -->
+        <article class="sign-card petunjuk" data-name="plang petunjuk arah cemara">
+            <div class="sign-visual highway-sign-box">
+                <div class="highway-board">
+                    <div class="highway-destination" style="border-top: none; padding-top: 0;">
+                        <span class="exit-arrow" style="font-size: 1.2rem;">➔</span>
+                        <div class="dest-text">
+                            <strong>CEMARA</strong>
+                            <small>Petunjuk Arah Wilayah</small>
                         </div>
                     </div>
                 </div>
-                <span class="badge bg-petunjuk" style="background:#047857; color:#fff;">Plang Informasi Petunjuk</span>
-                <h3>Papan Petunjuk Arah Cemara</h3>
-                <p><strong>Arti:</strong> Informasi penunjuk arah menuju wilayah Cemara.<br><strong>Risiko:</strong> Pengemudi dapat tersesat jika mengabaikan arah panah.</p>
-            </article>
+            </div>
+            <span class="badge bg-petunjuk" style="background:#047857; color:#fff;">Plang Informasi Petunjuk</span>
+            <h3>Papan Petunjuk Arah Cemara</h3>
+            <p><strong>Arti:</strong> Informasi penunjuk arah menuju wilayah Cemara.<br><strong>Risiko:</strong> Membantu navigasi perjalanan.</p>
+        </article>
 
-            <!-- 21. Plang Petunjuk Jurusan Wilayah (Amplas) -->
-            <article class="sign-card petunjuk" data-name="plang petunjuk arah amplas">
-                <div class="sign-visual highway-sign-box">
-                    <div class="highway-board">
-                        <div class="highway-destination" style="border-top: none; padding-top: 0;">
-                            <span class="exit-arrow" style="font-size: 1.2rem;">➔</span>
-                            <div class="dest-text">
-                                <strong>AMPLAS</strong>
-                                <small>Petunjuk Arah Wilayah</small>
-                            </div>
+        <!-- 26. Plang Petunjuk Arah Amplas -->
+        <article class="sign-card petunjuk" data-name="plang petunjuk arah amplas">
+            <div class="sign-visual highway-sign-box">
+                <div class="highway-board">
+                    <div class="highway-destination" style="border-top: none; padding-top: 0;">
+                        <span class="exit-arrow" style="font-size: 1.2rem;">➔</span>
+                        <div class="dest-text">
+                            <strong>AMPLAS</strong>
+                            <small>Petunjuk Arah Wilayah</small>
                         </div>
                     </div>
                 </div>
-                <span class="badge bg-petunjuk" style="background:#047857; color:#fff;">Plang Informasi Petunjuk</span>
-                <h3>Papan Petunjuk Arah Amplas</h3>
-                <p><strong>Arti:</strong> Informasi penunjuk arah jalur menuju kawasan Amplas.<br><strong>Risiko:</strong> Membantu navigasi kendaraan antar-kabupaten/kota.</p>
-            </article>
+            </div>
+            <span class="badge bg-petunjuk" style="background:#047857; color:#fff;">Plang Informasi Petunjuk</span>
+            <h3>Papan Petunjuk Arah Amplas</h3>
+            <p><strong>Arti:</strong> Informasi penunjuk arah jalur Amplas.<br><strong>Risiko:</strong> Membantu navigasi antar-wilayah.</p>
+        </article>
 
-            <!-- 22. Plang Petunjuk Jarak Kota (Berastagi & Kabanjahe) -->
-            <article class="sign-card petunjuk" data-name="plang jarak berastagi kabanjahe">
-                <div class="sign-visual highway-sign-box">
-                    <div class="highway-board" style="font-size: 0.85rem;">
-                        <div style="font-weight: 700; margin-bottom: 4px; border-bottom: 1px dashed rgba(255,255,255,0.4); padding-bottom: 4px;">
-                            BERASTAGI 3 KM
-                        </div>
-                        <div style="font-weight: 700;">
-                            KABANJAHE 15 KM
-                        </div>
+        <!-- 27. Plang Informasi Jarak Kota (Berastagi & Kabanjahe) -->
+        <article class="sign-card petunjuk" data-name="plang jarak berastagi kabanjahe">
+            <div class="sign-visual highway-sign-box">
+                <div class="highway-board" style="font-size: 0.85rem;">
+                    <div style="font-weight: 700; margin-bottom: 4px; border-bottom: 1px dashed rgba(255,255,255,0.4); padding-bottom: 4px;">
+                        BERASTAGI 3 KM
+                    </div>
+                    <div style="font-weight: 700;">
+                        KABANJAHE 15 KM
                     </div>
                 </div>
-                <span class="badge bg-petunjuk" style="background:#047857; color:#fff;">Plang Informasi Jarak</span>
-                <h3>Papan Informasi Jarak Kota</h3>
-                <p><strong>Arti:</strong> Menunjukkan sisa jarak kilometer menuju kota tujuan.<br><strong>Risiko:</strong> Penting untuk estimasi bahan bakar dan waktu perjalanan.</p>
-            </article>
+            </div>
+            <span class="badge bg-petunjuk" style="background:#047857; color:#fff;">Plang Informasi Jarak</span>
+            <h3>Papan Informasi Jarak Kota</h3>
+            <p><strong>Arti:</strong> Menunjukkan sisa jarak kilometer kota tujuan.<br><strong>Risiko:</strong> Estimasi waktu dan bahan bakar.</p>
+        </article>
 
-        </section>
-    </main>
+    </section>
+</main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-ornament">✦ ❖ ✦</div>
-        <p>&copy; 2026 <strong>Teen Traffic Guide</strong> &mdash; Generasi Muda Pelopor Keselamatan Berlalu Lintas Indonesia.</p>
-    </footer>
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="footer-ornament">✦ ❖ ✦</div>
+    <p>&copy; 2026 <strong>Teen Traffic Guide</strong> &mdash; Generasi Muda Pelopor Keselamatan Berlalu Lintas Indonesia.</p>
+</footer>
 
-    <!-- Skrip Pencarian & Filter Sederhana -->
-    <script>
-        function searchSigns() {
-            let input = document.getElementById('search-input').value.toLowerCase();
-            let cards = document.getElementsByClassName('sign-card');
-            
-            for (let i = 0; i < cards.length; i++) {
-                let name = cards[i].getAttribute('data-name');
-                let text = cards[i].innerText.toLowerCase();
-                if (name.includes(input) || text.includes(input)) {
-                    cards[i].style.display = "";
-                } else {
-                    cards[i].style.display = "none";
-                }
+<!-- Skrip Pencarian & Filter Sederhana -->
+<script>
+    function searchSigns() {
+        let input = document.getElementById('search-input').value.toLowerCase();
+        let cards = document.getElementsByClassName('sign-card');
+        
+        for (let i = 0; i < cards.length; i++) {
+            let name = cards[i].getAttribute('data-name');
+            let text = cards[i].innerText.toLowerCase();
+            if (name.includes(input) || text.includes(input)) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
             }
         }
+    }
 
-        function filterSigns(category, btn) {
-            let cards = document.getElementsByClassName('sign-card');
-            let buttons = document.getElementsByClassName('btn-filter');
-            
-            for (let b of buttons) {
-                b.classList.remove('active');
-            }
-            btn.classList.add('active');
+    function filterSigns(category, btn) {
+        let cards = document.getElementsByClassName('sign-card');
+        let buttons = document.getElementsByClassName('btn-filter');
+        
+        for (let b of buttons) {
+            b.classList.remove('active');
+        }
+        btn.classList.add('active');
 
-            for (let card of cards) {
-                if (category === 'all' || card.classList.contains(category)) {
-                    card.style.display = "";
-                } else {
-                    card.style.display = "none";
-                }
+        for (let card of cards) {
+            if (category === 'all' || card.classList.contains(category)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
             }
         }
-    </script>
-</body>
-</html>
-```[cite: 5]
+    }
+</script>
