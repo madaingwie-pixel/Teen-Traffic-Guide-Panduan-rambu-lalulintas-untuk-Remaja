@@ -589,3 +589,81 @@ footer,
         padding: 24px 20px;
     }
 }
+
+/* =========================================
+   STYLE TAMBAHAN: PLANG PETUNJUK JALAN TOL
+   ========================================= */
+.highway-sign-box {
+    background: #0f172a;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 160px;
+    border: 2px dashed #cbd5e1;
+}
+
+.highway-board {
+    background: linear-gradient(135deg, #065f46, #047857);
+    border: 3px solid #ffffff;
+    border-radius: 6px;
+    padding: 12px 16px;
+    width: 100%;
+    max-width: 220px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: relative;
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+}
+
+.highway-exit-badge {
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    border: 1px solid #1e293b;
+}
+
+.highway-exit-badge span {
+    background: #1e293b;
+    color: #ffffff;
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+.highway-destination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    border-top: 1px dashed rgba(255,255,255,0.4);
+    padding-top: 8px;
+}
+
+.exit-arrow {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #facc15;
+    line-height: 1;
+}
+
+.dest-text strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.dest-text small {
+    font-size: 0.75rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
