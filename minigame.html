@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Game: Kembalikan ke Standar! - TeenTraffic Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="minigame.css"> <!-- File CSS khusus game jika perlu -->
+</head>
+<body>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><span>TeenTraffic</span>Guide</a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="rambu.html">Katalog Rambu</a>
+                <a href="uud.html">UU & Edukasi</a>
+                <a href="minigame.html" class="active">Mini-Game</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container" style="text-align: center;">
+        <h1>Tantangan: Kembalikan Motor ke Standar SNI! 🛠️</h1>
+        <p>Klik atau geser bagian motor yang melanggar hukum (Knalpot Brong, Ban Cacing, Tanpa Spion) agar kembali aman dan sesuai UU!</p>
+
+        <!-- Area Game -->
+        <div class="game-arena">
+            <div id="motor-container" class="modded-bike">
+                <!-- Elemen-elemen bagian motor yang bisa diubah -->
+                <div id="knalpot" class="bike-part bad" onclick="benahiBagian('knalpot')">
+                    🔥 Knalpot Brong (Klik untuk Ganti Standar)
+                </div>
+                <div id="ban" class="bike-part bad" onclick="benahiBagian('ban')">
+                    🔴 Ban Cacing Tipis (Klik untuk Ganti Standar)
+                </div>
+                <div id="spion" class="bike-part bad" onclick="benahiBagian('spion')">
+                    ❌ Tanpa Spion (Klik untuk Pasang Spion)
+                </div>
+            </div>
+
+            <!-- Skor / Status -->
+            <div class="game-score">
+                <p>Bagian yang dibenahi: <span id="score">0</span> / 3</p>
+                <div id="game-message" class="alert-box" style="display: none;"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Script JavaScript Mini-Game -->
+    <script>
+        let score = 0;
+        let fixedParts = { knalpot: false, ban: false, spion: false };
+
+        function benahiBagian(part) {
+            if (!fixedParts[part]) {
+                fixedParts[part] = true;
+                score++;
+                document.getElementById('score').innerText = score;
+
+                // Ubah tampilan elemen jadi standar
+                let el = document.getElementById(part);
+                el.classList.remove('bad');
+                el.classList.add('good');
+
+                if (part === 'knalpot') el.innerHTML = "✅ Knalpot Standar (Aman & Tidak Bising)";
+                if (part === 'ban') el.innerHTML = "✅ Ban Standar SNI (Stabil)";
+                if (part === 'spion') el.innerHTML = "✅ Spion Lengkap Kiri-Kanan";
+
+                // Cek jika sudah menang
+                if (score === 3) {
+                    let msg = document.getElementById('game-message');
+                    msg.style.display = "block";
+                    msg.innerHTML = "🎉 Luar Biasa! Motor kamu sekarang 100% legal, aman, dan siap berkendara sesuai UU No. 22 Tahun 2009!";
+                }
+            }
+        }
+    </script>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 <strong>Teen Traffic Guide</strong></p>
+    </footer>
+
+</body>
+</html>
