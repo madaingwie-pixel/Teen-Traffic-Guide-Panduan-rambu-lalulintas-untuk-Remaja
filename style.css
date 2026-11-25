@@ -730,4 +730,86 @@ footer,
     .quote-card {
         padding: 24px 20px;
     }
+
+    /* =========================================
+   STYLE TAMBAHAN KHUSUS HALAMAN MINI-GAME
+   ========================================= */
+.game-arena {
+    max-width: 650px;
+    margin: 30px auto;
+    background: #ffffff;
+    border: 2.5px solid #0f172a;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 6px 6px 0px #0f172a;
+    text-align: center;
+}
+
+.modded-bike {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+.bike-part {
+    padding: 18px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2.5px solid #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Bagian motor yang masih melanggar aturan */
+.bike-part.bad {
+    background-color: #ffeeee;
+    color: #b91c1c;
+    box-shadow: 4px 4px 0px #b91c1c;
+}
+
+.bike-part.bad:hover {
+    background-color: #fecaca;
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 0px #b91c1c;
+}
+
+.bike-part.bad:active {
+    transform: translateY(2px);
+    box-shadow: 2px 2px 0px #b91c1c;
+}
+
+/* Bagian motor yang sudah dibenahi jadi standar/aman */
+.bike-part.good {
+    background-color: #d1fae5;
+    color: #065f46;
+    border-color: #065f46;
+    box-shadow: 4px 4px 0px #065f46;
+    cursor: default;
+}
+
+.game-score {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 15px;
+}
+
+.alert-box {
+    margin-top: 20px;
+    background-color: #d1fae5;
+    border: 2.5px solid #00b06f;
+    box-shadow: 4px 4px 0px #00b06f;
+    padding: 16px;
+    border-radius: 12px;
+    color: #065f46;
+    font-weight: 800;
+    font-size: 1.05rem;
+}
 }
