@@ -7,8 +7,10 @@
 }
 
 body {
-    background-color: #f8fafc;
-    color: #1e293b;
+    background-color: #f1f5f9;
+    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-size: 24px 24px;
+    color: #0f172a;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -21,14 +23,15 @@ body {
     height: 6px;
     width: 100%;
 }
-.ribbon-red { flex: 1; background-color: #dc2626; }
+.ribbon-red { flex: 1; background-color: #ef4444; }
 .ribbon-white { flex: 1; background-color: #ffffff; }
 
-/* --- NAVBAR --- */
+/* --- NAVBAR (GAYA GAMING MODERN) --- */
 .main-nav {
-    background-color: #0f172a;
+    background-color: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(12px);
     padding: 16px 24px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid #1e293b;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -45,120 +48,167 @@ body {
 }
 
 .nav-logo {
-    font-size: 1.4rem;
+    font-size: 1.45rem;
     font-weight: 800;
     color: #ffffff;
     text-decoration: none;
     letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .nav-logo span {
-    color: #10b981;
+    background: linear-gradient(90deg, #00e699, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
     display: flex;
-    gap: 24px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
 .nav-links a {
     color: #cbd5e1;
     text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.2s ease;
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover {
     color: #ffffff;
-    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* --- HERO SECTION (DENGAN FOTO BACKGROUND) --- */
+.nav-links a.active {
+    color: #0f172a;
+    background-color: #00e699;
+    font-weight: 800;
+    box-shadow: 0 3px 0 #009966;
+}
+
+/* --- HERO SECTION (GAMBAR JELAS & VIBRANT) --- */
 .hero {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.85)), 
+    /* Overlay dibuat jauh lebih transparan agar gambar siswa pixel terlihat jelas */
+    background-image: linear-gradient(rgba(15, 23, 42, 0.35), rgba(15, 23, 42, 0.55)), 
                       url("Siswa Bingung di Antara Rambu Lalu Lintas.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: #ffffff;
     text-align: center;
-    padding: 80px 24px 96px;
+    padding: 90px 24px 105px;
+    border-bottom: 4px solid #0f172a;
 }
 
 .hero-content {
-    max-width: 760px;
+    max-width: 780px;
     margin: 0 auto;
 }
 
 .hero-ornament {
-    font-size: 0.8rem;
-    font-weight: 700;
+    display: inline-block;
+    background-color: rgba(15, 23, 42, 0.75);
+    border: 1.5px solid #00e699;
+    padding: 6px 16px;
+    border-radius: 99px;
+    font-size: 0.78rem;
+    font-weight: 800;
     letter-spacing: 1.5px;
-    color: #34d399;
-    margin-bottom: 14px;
+    color: #00e699;
+    margin-bottom: 18px;
+    backdrop-filter: blur(4px);
 }
 
 .hero h1 {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     font-weight: 800;
     max-width: 780px;
     margin: 0 auto 18px;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+    /* Text shadow tegas agar tulisan tetap jelas di atas background terang/jelas */
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.85), 0 2px 4px rgba(0, 0, 0, 0.9);
 }
 
 .hero p {
-    font-size: 1.05rem;
-    color: #e2e8f0;
+    font-size: 1.08rem;
+    font-weight: 500;
+    color: #f8fafc;
     max-width: 640px;
-    margin: 0 auto 32px;
+    margin: 0 auto 36px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
 }
 
 .hero-actions {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 18px;
     flex-wrap: wrap;
 }
 
+/* --- TOMBOL UTAMA ALA ROBLOX PLAY BUTTON --- */
 .btn-primary {
-    background-color: #10b981;
+    background-color: #00b06f; /* Hijau ikonik Roblox */
     color: #ffffff;
-    padding: 14px 28px;
-    border-radius: 8px;
+    padding: 15px 32px;
+    border-radius: 12px;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 0.95rem;
-    transition: transform 0.2s, background-color 0.2s;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    border: 2px solid #00e699;
+    box-shadow: 0 6px 0 #007348, 0 10px 20px rgba(0, 0, 0, 0.35);
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-primary:hover {
-    background-color: #059669;
+    background-color: #00c87e;
     transform: translateY(-2px);
+    box-shadow: 0 8px 0 #007348, 0 14px 24px rgba(0, 176, 111, 0.45);
 }
 
+.btn-primary:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #007348;
+}
+
+/* --- TOMBOL SEKUNDER ALA ROBLOX UI --- */
 .btn-secondary {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(30, 41, 59, 0.85);
     color: #ffffff;
-    padding: 14px 28px;
-    border-radius: 8px;
+    padding: 15px 30px;
+    border-radius: 12px;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(4px);
-    transition: background-color 0.2s, transform 0.2s;
+    font-weight: 700;
+    font-size: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 0 6px 0 #0f172a, 0 10px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
+    transition: all 0.15s ease;
 }
 
 .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(51, 65, 85, 0.95);
+    border-color: #ffffff;
     transform: translateY(-2px);
+    box-shadow: 0 8px 0 #0f172a;
 }
 
-/* --- KONTEN UTAMA & KARTU FITUR --- */
+.btn-secondary:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #0f172a;
+}
+
+/* --- KONTEN UTAMA & KARTU FITUR (GAYA POP-CARD REMAJA) --- */
 .container,
 .main-container {
     max-width: 1140px;
@@ -176,23 +226,23 @@ body {
 
 .feature-card {
     background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
+    border: 2.5px solid #0f172a;
+    border-radius: 16px;
     padding: 32px 28px;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 6px 6px 0px #0f172a;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px #00b06f;
 }
 
 .feature-card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.3rem;
+    font-weight: 800;
     color: #0f172a;
     margin-bottom: 12px;
 }
@@ -206,30 +256,32 @@ body {
 
 .text-link,
 .card-link {
-    color: #059669;
-    font-weight: 700;
+    display: inline-block;
+    color: #009960;
+    font-weight: 800;
     text-decoration: none;
     font-size: 0.95rem;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .text-link:hover,
 .card-link:hover {
-    color: #047857;
-    text-decoration: underline;
+    color: #00b06f;
+    transform: translateX(4px);
 }
 
 /* --- HALAMAN KATALOG RAMBU & SEARCHING --- */
 .sub-hero {
-    padding: 60px 20px;
+    padding: 64px 20px;
     text-align: center;
 }
 
 .controls {
-    max-width: 600px;
-    margin: 0 auto 40px auto;
+    max-width: 640px;
+    margin: 0 auto 44px auto;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
 }
 
 .search-wrapper {
@@ -239,77 +291,91 @@ body {
 
 .search-icon {
     position: absolute;
-    left: 16px;
+    left: 18px;
     top: 50%;
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    stroke: #64748b;
+    stroke: #0f172a;
 }
 
 #search-input {
     width: 100%;
-    padding: 14px 16px 14px 50px;
-    border: 1px solid #cbd5e1;
-    border-radius: 10px;
-    font-size: 0.95rem;
+    padding: 15px 18px 15px 52px;
+    border: 2.5px solid #0f172a;
+    border-radius: 14px;
+    font-size: 0.98rem;
+    font-weight: 600;
     outline: none;
     background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    box-shadow: 4px 4px 0px #0f172a;
+    transition: all 0.2s ease;
 }
 
 #search-input:focus {
-    border-color: #10b981;
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    border-color: #00b06f;
+    box-shadow: 4px 4px 0px #00b06f;
 }
 
 .filter-buttons {
     display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
 .btn-filter {
-    padding: 8px 16px;
+    padding: 9px 18px;
     background-color: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #475569;
+    border: 2px solid #0f172a;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #0f172a;
     cursor: pointer;
-    transition: all 0.2s;
+    box-shadow: 3px 3px 0px #0f172a;
+    transition: all 0.15s ease;
 }
 
-.btn-filter:hover,
+.btn-filter:hover {
+    transform: translateY(-2px);
+    background-color: #f1f5f9;
+}
+
 .btn-filter.active {
-    background-color: #0f172a;
+    background-color: #00b06f;
     color: #ffffff;
     border-color: #0f172a;
+    box-shadow: 3px 3px 0px #0f172a;
 }
 
 .signs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 24px;
+    gap: 26px;
 }
 
 .sign-card {
     background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
+    border: 2.5px solid #0f172a;
+    border-radius: 16px;
     padding: 24px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.03);
+    box-shadow: 5px 5px 0px #0f172a;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sign-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0px #38bdf8;
 }
 
 .sign-visual {
-    width: 90px;
-    height: 90px;
+    width: 96px;
+    height: 96px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -323,74 +389,36 @@ body {
 }
 
 .sign-card h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-size: 1.15rem;
+    font-weight: 800;
     color: #0f172a;
     margin-bottom: 8px;
 }
 
 .sign-card p {
-    font-size: 0.85rem;
-    color: #64748b;
+    font-size: 0.88rem;
+    color: #475569;
     text-align: left;
     width: 100%;
 }
 
 .badge {
     display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 5px 12px;
+    border-radius: 8px;
+    border: 1.5px solid #0f172a;
     margin-bottom: 12px;
     text-transform: uppercase;
 }
 
-.bg-larangan { background-color: #fee2e2; color: #b91c1c; }
-.bg-peringatan { background-color: #fef3c7; color: #b45309; }
-.bg-perintah { background-color: #dbeafe; color: #1d4ed8; }
-.bg-petunjuk { background-color: #dcfce7; color: #15803d; }
+.bg-larangan { background-color: #fecaca; color: #991b1b; }
+.bg-peringatan { background-color: #fde68a; color: #92400e; }
+.bg-perintah { background-color: #bfdbfe; color: #1e40af; }
+.bg-petunjuk { background-color: #bbf7d0; color: #166534; }
 
-/* --- HALAMAN QUOTES (BINGKAI KOTAK-KOTAK) --- */
-.quotes-grid,
-.quote-box {
-    background-color: #ffffff;
-    border: 2px solid #cbd5e1;
-    border-radius: 12px;
-    padding: 28px 24px;
-    box-shadow: 4px 4px 0px #0f172a;
-}
-
-/* --- FOOTER --- */
-footer,
-.site-footer {
-    background-color: #ffffff;
-    border-top: 1px solid #e2e8f0;
-    text-align: center;
-    padding: 36px 24px;
-    color: #64748b;
-    font-size: 0.9rem;
-    margin-top: auto;
-}
-
-.footer-ornament {
-    color: #10b981;
-    margin-bottom: 8px;
-    letter-spacing: 4px;
-}
-
-/* --- RESPONSIF HP --- */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-    .nav-container {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-/* --- CSS TAMBAHAN UNTUK HALAMAN UU & EDUKASI --- */
+/* --- HALAMAN UU & EDUKASI (KARTU TEGAS & MODERN) --- */
 .uud-list {
     display: flex;
     flex-direction: column;
@@ -401,21 +429,27 @@ footer,
 
 .uud-card {
     background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
+    border: 2.5px solid #0f172a;
+    border-radius: 16px;
     padding: 32px;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    box-shadow: 6px 6px 0px #0f172a;
     display: flex;
     gap: 24px;
     align-items: flex-start;
+    transition: transform 0.2s ease;
+}
+
+.uud-card:hover {
+    transform: translateY(-2px);
 }
 
 .uud-icon {
     font-size: 2.2rem;
-    background-color: #ecfdf5;
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
+    background-color: #d1fae5;
+    border: 2px solid #0f172a;
+    width: 62px;
+    height: 62px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -423,45 +457,49 @@ footer,
 }
 
 .uud-text-content h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.3rem;
+    font-weight: 800;
     color: #0f172a;
     margin-bottom: 12px;
 }
 
 .uud-desc {
-    color: #475569;
-    font-size: 0.95rem;
+    color: #334155;
+    font-size: 0.96rem;
     margin-bottom: 16px;
 }
 
 .uud-bullets {
     list-style-type: disc;
     padding-left: 20px;
-    color: #334155;
-    font-size: 0.93rem;
+    color: #1e293b;
+    font-size: 0.94rem;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     margin-bottom: 16px;
 }
 
 .uud-alert {
-    background-color: #fffbeb;
-    border-left: 4px solid #f59e0b;
-    padding: 12px 16px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    color: #92400e;
-    margin-top: 12px;
+    background-color: #fef3c7;
+    border: 2px solid #f59e0b;
+    border-left: 6px solid #d97706;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #78350f;
+    margin-top: 14px;
 }
 
 .alert-card {
-    border-left: 5px solid #dc2626;
+    border-color: #dc2626;
+    box-shadow: 6px 6px 0px #dc2626;
 }
 
 .alert-card .uud-icon {
     background-color: #fee2e2;
+    border-color: #dc2626;
 }
 
 .violation-grid {
@@ -474,35 +512,28 @@ footer,
 .violation-item {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
+    gap: 14px;
     background-color: #f8fafc;
-    padding: 12px 16px;
-    border-radius: 8px;
-    border: 1px solid #f1f5f9;
-    font-size: 0.92rem;
-    color: #334155;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1.5px solid #cbd5e1;
+    font-size: 0.93rem;
+    color: #1e293b;
 }
 
 .v-num {
-    background-color: #dc2626;
+    background-color: #ef4444;
     color: #ffffff;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
+    border: 1.5px solid #0f172a;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.78rem;
-    font-weight: 700;
+    font-size: 0.82rem;
+    font-weight: 800;
     flex-shrink: 0;
-}
-
-/* Responsif untuk HP */
-@media (max-width: 768px) {
-    .uud-card {
-        flex-direction: column;
-        padding: 20px;
-    }
 }
 
 /* =========================================
@@ -522,31 +553,35 @@ footer,
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 28px;
     margin-top: 10px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
 }
 
 .quote-card {
     background-color: #ffffff;
-    border: 2px solid #1e293b;
+    border: 2.5px solid #0f172a;
     border-radius: 16px;
     padding: 32px 28px;
-    box-shadow: 6px 6px 0px #1e293b;
+    box-shadow: 6px 6px 0px #0f172a;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .quote-card:hover {
     transform: translate(-3px, -3px);
-    box-shadow: 9px 9px 0px #dc2626;
+    box-shadow: 9px 9px 0px #00b06f;
 }
 
 .quote-mark {
     font-size: 4.5rem;
     font-weight: 800;
     line-height: 0.8;
-    color: #dc2626;
+    color: #00b06f;
     font-family: Georgia, serif;
     margin-bottom: 12px;
     user-select: none;
@@ -555,29 +590,19 @@ footer,
 .quote-text {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #1e293b;
-    font-weight: 500;
+    color: #0f172a;
+    font-weight: 600;
     margin: 0 0 24px 0;
     flex-grow: 1;
 }
 
 .quote-author {
     font-size: 0.9rem;
-    font-weight: 700;
-    color: #0f172a;
+    font-weight: 800;
+    color: #009960;
     padding-top: 14px;
-    border-top: 1.5px dashed #cbd5e1;
+    border-top: 2px dashed #cbd5e1;
     display: block;
-}
-
-@media (max-width: 600px) {
-    .quotes-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    .quote-card {
-        padding: 24px 20px;
-    }
 }
 
 /* =========================================
@@ -588,19 +613,19 @@ footer,
     height: auto;
     min-height: 120px;
     background: #0f172a;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px dashed #cbd5e1;
+    border: 2px solid #0f172a;
     margin-bottom: 16px;
 }
 
 .highway-board {
-    background: linear-gradient(135deg, #065f46, #047857);
+    background: linear-gradient(135deg, #009960, #00b06f);
     border: 2.5px solid #ffffff;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 10px 14px;
     width: 100%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -613,17 +638,17 @@ footer,
     font-size: 0.65rem;
     font-weight: 800;
     padding: 2px 6px;
-    border-radius: 3px;
+    border-radius: 4px;
     display: inline-flex;
     align-items: center;
     gap: 4px;
     margin-bottom: 8px;
     text-transform: uppercase;
-    border: 1px solid #1e293b;
+    border: 1.5px solid #0f172a;
 }
 
 .highway-exit-badge span {
-    background: #1e293b;
+    background: #0f172a;
     color: #ffffff;
     padding: 1px 4px;
     border-radius: 2px;
@@ -634,21 +659,21 @@ footer,
     align-items: center;
     gap: 10px;
     color: #ffffff;
-    border-top: 1px dashed rgba(255, 255, 255, 0.4);
+    border-top: 1.5px dashed rgba(255, 255, 255, 0.5);
     padding-top: 8px;
 }
 
 .exit-arrow {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #facc15;
+    color: #fde047;
     line-height: 1;
 }
 
 .dest-text strong {
     display: block;
     font-size: 0.95rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.3px;
     line-height: 1.2;
     color: #ffffff;
@@ -656,6 +681,53 @@ footer,
 
 .dest-text small {
     font-size: 0.75rem;
+    color: #f1f5f9;
+    font-weight: 600;
+}
+
+/* --- FOOTER --- */
+footer,
+.site-footer {
+    background-color: #0f172a;
+    border-top: 4px solid #00b06f;
+    text-align: center;
+    padding: 36px 24px;
     color: #cbd5e1;
-    font-weight: 500;
+    font-size: 0.92rem;
+    margin-top: auto;
+}
+
+.site-footer strong {
+    color: #00e699;
+}
+
+.footer-ornament {
+    color: #00e699;
+    margin-bottom: 8px;
+    letter-spacing: 4px;
+}
+
+/* --- RESPONSIF HP --- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .uud-card {
+        flex-direction: column;
+        padding: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+    .quotes-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .quote-card {
+        padding: 24px 20px;
+    }
 }
